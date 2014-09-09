@@ -25,6 +25,7 @@
 BUILD_ROOT=/builds/FreeBSD_HEAD
 
 export MAKEOBJDIRPREFIX=/usr/obj
+cd $BUILD_ROOT
 
 sudo rm -fr ${PACKAGE_ROOT}/package
 mkdir -p ${PACKAGE_ROOT}/package
