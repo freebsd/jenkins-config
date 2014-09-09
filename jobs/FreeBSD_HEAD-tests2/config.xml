@@ -19,7 +19,11 @@
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
-  <builders/>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>touch *.xml</command>
+    </hudson.tasks.Shell>
+  </builders>
   <publishers>
     <hudson.tasks.junit.JUnitResultArchiver>
       <testResults>test-report.xml</testResults>
