@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.SubversionSCM" plugin="subversion@1.54">
+    <locations>
+      <hudson.scm.SubversionSCM_-ModuleLocation>
+        <remote>http://svn0.us-west.freebsd.org/ports/head@$SVN_REVISION</remote>
+        <local>.</local>
+        <depthOption>infinity</depthOption>
+        <ignoreExternalsOption>false</ignoreExternalsOption>
+      </hudson.scm.SubversionSCM_-ModuleLocation>
+    </locations>
+    <excludedRegions></excludedRegions>
+    <includedRegions></includedRegions>
+    <excludedUsers></excludedUsers>
+    <excludedRevprop></excludedRevprop>
+    <excludedCommitMessages></excludedCommitMessages>
+    <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+    <ignoreDirPropChanges>false</ignoreDirPropChanges>
+    <filterChangelog>false</filterChangelog>
+  </scm>
+  <assignedNode>jenkins-pci-headamd64</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command># for debugging purposes, show the environment
+env
+
+cd ${WORKSPACE}
+
+TMPFILE=`mktemp /tmp/poudriere.XXXXXX`
+    
+PACKAGES_TO_BUILD=`svn log -v -r ${SVN_REVISION} --xml http://svn0.us-west.freebsd.org/ports/head | xml sel -t -m &quot;/log/logentry/paths/path[@action!=&apos;D&apos;]&quot; -v &quot;node()&quot; -n | grep &apos;^\/head&apos; | cut -d&apos;/&apos; -f3-4 | grep &apos;\/&apos; | egrep -E -v &apos;^(Mk|Tools|Templates|Keywords|CVSROOT)&apos; | grep -v Makefile | sort | uniq`
+echo &quot;${PACKAGES_TO_BUILD}&quot; &gt;&gt; ${TMPFILE}
+
+# from here down we rely on /usr/ports being a symlink to the workspace
+
+# cd /usr/ports/
+# make fetchindex
+
+# # really brave, find all the ports that depend on modified ports and add them to the list
+# TMPFILE2=`mktemp /tmp/index.XXXXXX`
+# for x in `cat ${TMPFILE}` ; do
+#   cd /usr/ports/${x}
+#   PN=`make -V PKGNAME`
+#   grep ${x} /usr/ports/INDEX-11 ; done | cut -d\| -f 2 | cut -d/ -f 4,5 | sort -u &gt; ${TMPFILE2}
+# 
+# cat ${TMPFILE2} &gt;&gt; ${TMPFILE}
+
+# if there were no port changes (only things like Mk/* or MOVED, etc.), then bail
+BUILD_COUNT=`cat ${TMPFILE} | wc -l | xargs`
+if [ &quot;${BUILD_COUNT}&quot; = &quot;0&quot; ]; then echo &quot;Nothing to build&quot; ; exit 0 ; fi
+
+# actually, really build
+nice sudo poudriere bulk -N -t -C -B ${BUILD_NUMBER} -f ${TMPFILE} -p default -j headamd64
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.Mailer plugin="mailer@1.8">
+      <recipients>swills@FreeBSD.org</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+    <hudson.plugins.ircbot.IrcPublisher plugin="ircbot@2.25">
+      <targets>
+        <hudson.plugins.im.GroupChatIMMessageTarget plugin="instant-messaging@1.28">
+          <name>#mouf</name>
+          <notificationOnly>true</notificationOnly>
+        </hudson.plugins.im.GroupChatIMMessageTarget>
+      </targets>
+      <strategy>FAILURE_AND_FIXED</strategy>
+      <notifyOnBuildStart>false</notifyOnBuildStart>
+      <notifySuspects>false</notifySuspects>
+      <notifyCulprits>false</notifyCulprits>
+      <notifyFixers>false</notifyFixers>
+      <notifyUpstreamCommitters>false</notifyUpstreamCommitters>
+      <buildToChatNotifier class="hudson.plugins.im.build_notify.SummaryOnlyBuildToChatNotifier" plugin="instant-messaging@1.28"/>
+      <matrixMultiplier>ONLY_CONFIGURATIONS</matrixMultiplier>
+      <channels/>
+    </hudson.plugins.ircbot.IrcPublisher>
+  </publishers>
+  <buildWrappers/>
+</project>

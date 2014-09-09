@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.plugins.ircbot.IrcPublisher_-DescriptorImpl plugin="ircbot@2.25">
+  <enabled>true</enabled>
+  <hostname>chat.freenode.net</hostname>
+  <port>6667</port>
+  <ssl>false</ssl>
+  <disallowPrivateChat>false</disallowPrivateChat>
+  <login>jenkins-ports</login>
+  <sslTrustAllCertificates>false</sslTrustAllCertificates>
+  <password></password>
+  <nick>jenkins-ports</nick>
+  <nickServPassword></nickServPassword>
+  <socksHost></socksHost>
+  <socksPort>1080</socksPort>
+  <scrambledPasswords>true</scrambledPasswords>
+  <defaultTargets>
+    <hudson.plugins.im.GroupChatIMMessageTarget plugin="instant-messaging@1.28">
+      <name>#mouf</name>
+      <notificationOnly>true</notificationOnly>
+    </hudson.plugins.im.GroupChatIMMessageTarget>
+  </defaultTargets>
+  <commandPrefix>!jenkins</commandPrefix>
+  <hudsonLogin></hudsonLogin>
+  <useNotice>false</useNotice>
+  <charset>UTF-8</charset>
+  <useColors>false</useColors>
+</hudson.plugins.ircbot.IrcPublisher_-DescriptorImpl>
