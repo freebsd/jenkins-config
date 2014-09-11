@@ -28,21 +28,21 @@
     <hudson.security.HudsonPrivateSecurityRealm_-Details>
       <passwordHash>#jbcrypt:$2a$10$q.7EWw.Jf/3YI0TRHPq0huEospzZmgmyPGRWm3CQoXLa6cPSmXAbu</passwordHash>
     </hudson.security.HudsonPrivateSecurityRealm_-Details>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.6">
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.8">
       <emailAddress>skreuzer@FreeBSD.org</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
     <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
     <jenkins.security.LastGrantedAuthoritiesProperty>
       <roles>
         <string>ROLE_SKREUZER</string>
+        <string>ROLE_DONATIONS</string>
+        <string>skreuzer</string>
+        <string>ROLE_RELENG</string>
+        <string>donations</string>
         <string>authenticated</string>
         <string>releng</string>
-        <string>skreuzer</string>
-        <string>ROLE_DONATIONS</string>
-        <string>donations</string>
-        <string>ROLE_RELENG</string>
       </roles>
-      <timestamp>1399552715699</timestamp>
+      <timestamp>1410451830481</timestamp>
     </jenkins.security.LastGrantedAuthoritiesProperty>
   </properties>
 </user>
