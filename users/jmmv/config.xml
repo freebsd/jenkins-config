@@ -11,7 +11,7 @@
     <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.10">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
     </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.6"/>
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.10"/>
     <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
     <hudson.model.MyViewsProperty>
       <views>
@@ -31,11 +31,11 @@
       <roles>
         <string>ROLE_KYUA</string>
         <string>ROLE_JMMV</string>
-        <string>jmmv</string>
         <string>kyua</string>
         <string>authenticated</string>
+        <string>jmmv</string>
       </roles>
-      <timestamp>1400957400753</timestamp>
+      <timestamp>1411740663361</timestamp>
     </jenkins.security.LastGrantedAuthoritiesProperty>
   </properties>
 </user>
