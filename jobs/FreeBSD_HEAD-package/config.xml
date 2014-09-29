@@ -48,7 +48,7 @@ sudo cp tmp/fstab ${PACKAGE_ROOT}/package/etc/fstab
 sudo cp /etc/resolv.conf ${PACKAGE_ROOT}/package/etc/resolv.conf
 sudo /usr/local/sbin/pkg-static -c ${PACKAGE_ROOT}/package install -y ports-mgmt/pkg devel/kyua
 sudo /usr/local/sbin/pkg-static -c ${PACKAGE_ROOT}/package delete -f kyua atf
-sudo /usr/local/sbin/pkg-static -c ${PACKAGE_ROOT}/package add https://people.freebsd.org/~rodrigc/kyua/pkg/atf-0.20_2.txz https://people.freebsd.org/~rodrigc/kyua/pkg/kyua-0.10,3.txz
+sudo /usr/local/sbin/pkg-static -c ${PACKAGE_ROOT}/package add http://people.freebsd.org/~rodrigc/kyua/pkg/atf-0.20_2.txz http://people.freebsd.org/~rodrigc/kyua/pkg/kyua-0.10,3.txz
 
 sudo rm -fr $WORKSPACE/test.img
 sudo makefs -t ffs -s 2g -o label=TESTROOT $WORKSPACE/test.img $WORKSPACE/package
