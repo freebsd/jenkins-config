@@ -51,7 +51,8 @@ sudo /usr/local/sbin/pkg-static delete -f kyua atf
 sudo /usr/local/sbin/pkg-static add https://people.freebsd.org/~rodrigc/kyua/pkg/atf-0.20_2.txz https://people.freebsd.org/~rodrigc/kyua/pkg/kyua-0.10,3.txz
 
 sudo rm -fr $WORKSPACE/test.img
-sudo makefs -t ffs -s 2g -o label=TESTROOT $WORKSPACE/test.img $WORKSPACE/package</command>
+sudo makefs -t ffs -s 2g -o label=TESTROOT $WORKSPACE/test.img $WORKSPACE/package
+sudo chmod a+w $WORKSPACE/test.img</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
