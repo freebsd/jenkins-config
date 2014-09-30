@@ -21,16 +21,18 @@
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>touch *.xml</command>
+      <command>cat $WORKSPACE/test-report.txt
+touch $WORKSPACE/*.xml</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.tasks.junit.JUnitResultArchiver>
+    <hudson.tasks.junit.JUnitResultArchiver plugin="junit@1.0">
       <testResults>test-report.xml</testResults>
       <keepLongStdio>false</keepLongStdio>
       <testDataPublishers/>
+      <healthScaleFactor>1.0</healthScaleFactor>
     </hudson.tasks.junit.JUnitResultArchiver>
-    <hudson.tasks.Mailer plugin="mailer@1.8">
+    <hudson.tasks.Mailer plugin="mailer@1.10">
       <recipients>rodrigc@freebsd.org</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>true</sendToIndividuals>
