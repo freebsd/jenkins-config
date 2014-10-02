@@ -47,8 +47,8 @@ EOF
 sudo cp tmp/fstab ${PACKAGE_ROOT}/package/etc/fstab
 sudo cp /etc/resolv.conf ${PACKAGE_ROOT}/package/etc/resolv.conf
 sudo /usr/local/sbin/pkg-static -c ${PACKAGE_ROOT}/package install -y ports-mgmt/pkg devel/kyua devel/autoconf shells/bash
-sudo /usr/local/sbin/pkg-static -c ${PACKAGE_ROOT}/package delete  -y -f kyua atf
-sudo /usr/local/sbin/pkg-static -c ${PACKAGE_ROOT}/package add http://people.freebsd.org/~rodrigc/kyua/pkg/freebsd:11:x86:64/atf-0.20_2.txz http://people.freebsd.org/~rodrigc/kyua/pkg/freebsd:11:x86:64/kyua-0.10,3.txz
+sudo /usr/local/sbin/pkg-static -c ${PACKAGE_ROOT}/package delete  -y -f kyua atf lutok
+sudo /usr/local/sbin/pkg-static -c ${PACKAGE_ROOT}/package add http://people.freebsd.org/~rodrigc/kyua/pkg/freebsd:11:x86:64/atf-0.20_2.txz http://people.freebsd.org/~rodrigc/kyua/pkg/freebsd:11:x86:64/kyua-0.10,3.txz https://people.freebsd.org/~rodrigc/kyua/pkg/freebsd%3A11%3Ax86%3A64/lutok-0.4_5.txz
 
 sudo rm -fr $WORKSPACE/test.img
 sudo makefs -t ffs -s 2g -o label=TESTROOT $WORKSPACE/test.img $WORKSPACE/package
@@ -56,7 +56,7 @@ sudo chmod a+w $WORKSPACE/test.img</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.tasks.Mailer plugin="mailer@1.10">
+    <hudson.tasks.Mailer plugin="mailer@1.11">
       <recipients>rodrigc@freebsd.org</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>true</sendToIndividuals>
