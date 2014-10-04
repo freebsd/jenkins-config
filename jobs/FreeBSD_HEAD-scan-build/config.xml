@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>This build uses the clang static analyzer.&#xd;
+  <description>This build uses the clang static analyzer.&lt;br&gt;&#xd;
 See results at &lt;a href=&quot;http://scan.freebsd.org&quot;&gt;http://scan.freebsd.org&lt;/a&gt;&#xd;
 </description>
   <logRotator class="hudson.tasks.LogRotator">
