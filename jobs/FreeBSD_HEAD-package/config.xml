@@ -43,6 +43,9 @@ mkdir -p ${PACKAGE_ROOT}/package
 sudo make installworld NO_FSCHG=yes DESTDIR=${PACKAGE_ROOT}/package
 sudo make  installkernel NO_FSCHG=yes DESTDIR=${PACKAGE_ROOT}/package
 sudo make  distribution NO_FSCHG=yes DESTDIR=${PACKAGE_ROOT}/package
+sudo make -C usr.bin/yacc clean
+sudo make -C usr.bin/yacc DEBUG_FLAGS=-g 
+sudo make -C usr.bin/yacc install DEBUG_FLAGS=-g 
 
 cd $WORKSPACE
 rm -fr tmp
