@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description></description>
+  <description>This build uses the clang static analyzer.&#xd;
+See results at &lt;a href=&quot;http://scan.freebsd.org&quot;&gt;http://scan.freebsd.org&lt;/a&gt;&#xd;
+</description>
   <logRotator class="hudson.tasks.LogRotator">
     <daysToKeep>-1</daysToKeep>
     <numToKeep>-1</numToKeep>
@@ -103,7 +105,7 @@ sh freebsd-ci/scan-build/scan-world</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.tasks.Mailer plugin="mailer@1.6">
+    <hudson.tasks.Mailer plugin="mailer@1.11">
       <recipients>jenkins-admin@FreeBSD.org</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>
