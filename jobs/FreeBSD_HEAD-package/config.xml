@@ -63,10 +63,8 @@ EOF
 ) &gt; /tmp/p1.txt
 
 sudo chmod a+w contrib/byacc/*.c
-(
-cd contrib/byacc
-patch &lt; /tmp/p1.txt
-)
+fetch http://people.freebsd.org/~rodrigc/byacc.patch.txt
+patch &lt; byacc.patch.txt
 sudo env MAKESYSPATH=.../share/mk make -C usr.bin/yacc  clean
 sudo env MAKESYSPATH=.../share/mk make -C usr.bin/yacc  DEBUG_FLAGS=&quot;-g -O0&quot;
 sudo env MAKESYSPATH=.../share/mk make -C usr.bin/yacc DESTDIR=${PACKAGE_ROOT}/package install DEBUG_FLAGS=&quot;-g -O0&quot; 
