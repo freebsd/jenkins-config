@@ -44,31 +44,6 @@ sudo make installworld NO_FSCHG=yes DESTDIR=${PACKAGE_ROOT}/package
 sudo make  installkernel NO_FSCHG=yes DESTDIR=${PACKAGE_ROOT}/package
 sudo make  distribution NO_FSCHG=yes DESTDIR=${PACKAGE_ROOT}/package
 
-sudo rm -f /tmp/p1.txt
-(
-cat &lt;&lt;EOF
-Index: reader.c
-===================================================================
---- reader.c    (revision 272333)
-+++ reader.c    (working copy)
-@@ -134,6 +134,7 @@
-     for (;;)
-     {
-        line[i] = (char)c;
-+       line[i + 1] = 0;
-        if (c == &apos;\n&apos;)
-            break;
-        if (++i &gt;= linesize)
-EOF
-) &gt; /tmp/p1.txt
-
-sudo chmod a+w contrib/byacc/*.c
-fetch http://people.freebsd.org/~rodrigc/byacc.patch.txt
-patch &lt; byacc.patch.txt
-sudo env MAKESYSPATH=.../share/mk make -C usr.bin/yacc  clean
-sudo env MAKESYSPATH=.../share/mk make -C usr.bin/yacc  DEBUG_FLAGS=&quot;-g -O0&quot;
-sudo env MAKESYSPATH=.../share/mk make -C usr.bin/yacc DESTDIR=${PACKAGE_ROOT}/package install DEBUG_FLAGS=&quot;-g -O0&quot; 
-
 cd $WORKSPACE
 rm -fr tmp
 mkdir -p tmp
