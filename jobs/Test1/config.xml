@@ -1,5 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <com.cloudbees.plugins.flow.BuildFlow plugin="build-flow-plugin@0.15">
+  <actions/>
+  <description></description>
   <keepDependencies>false</keepDependencies>
   <properties/>
   <scm class="hudson.scm.NullSCM"/>
@@ -7,11 +9,24 @@
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers/>
+  <triggers>
+    <jenkins.triggers.ReverseBuildTrigger>
+      <spec></spec>
+      <upstreamProjects>FreeBSD_HEAD</upstreamProjects>
+      <threshold>
+        <name>SUCCESS</name>
+        <ordinal>0</ordinal>
+        <color>BLUE</color>
+        <completeBuild>true</completeBuild>
+      </threshold>
+    </jenkins.triggers.ReverseBuildTrigger>
+  </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders/>
   <publishers/>
   <buildWrappers/>
   <icon/>
+  <dsl>b1 = build(&quot;FreeBSD_HEAD-package&quot;)
+b2 = build(&quot;FreeBSD_HEAD-tests2&quot;)</dsl>
   <buildNeedsWorkspace>false</buildNeedsWorkspace>
 </com.cloudbees.plugins.flow.BuildFlow>
