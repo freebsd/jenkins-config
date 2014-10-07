@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.cloudbees.plugins.flow.BuildFlow plugin="build-flow-plugin@0.15">
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders/>
+  <publishers/>
+  <buildWrappers/>
+  <icon/>
+  <buildNeedsWorkspace>false</buildNeedsWorkspace>
+</com.cloudbees.plugins.flow.BuildFlow>
