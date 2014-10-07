@@ -25,8 +25,12 @@
     <hudson.search.UserSearchProperty>
       <insensitiveSearch>false</insensitiveSearch>
     </hudson.search.UserSearchProperty>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.6">
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.11">
       <emailAddress>delphij@FreeBSD.org</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
+    <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
+    <jenkins.security.LastGrantedAuthoritiesProperty>
+      <timestamp>0</timestamp>
+    </jenkins.security.LastGrantedAuthoritiesProperty>
   </properties>
 </user>
