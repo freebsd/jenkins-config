@@ -55,7 +55,7 @@ Build logs available &lt;a href=&quot;https://jenkins.freebsd.org/pci/head-amd64
               <properties>SVN_REVISION=${revision}</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
           </configs>
-          <projects>FreeBSD_ports_ci_head_headamd64,FreeBSD_ports_ci_head_headi386,</projects>
+          <projects>FreeBSD_ports_ci_head_headamd64,FreeBSD_ports_ci_head_headi386</projects>
           <condition>ALWAYS</condition>
           <triggerWithNoParameters>false</triggerWithNoParameters>
         </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
