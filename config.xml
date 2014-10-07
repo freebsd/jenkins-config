@@ -480,7 +480,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
               <timestamp>1397118522866</timestamp>
             </jenkins.security.LastGrantedAuthoritiesProperty>
             <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
-            <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.8">
+            <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.11">
               <emailAddress>rodrigc@FreeBSD.org</emailAddress>
             </hudson.tasks.Mailer_-UserProperty>
           </properties>
@@ -645,6 +645,22 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <label>Kyua testing</label>
       <nodeProperties/>
       <userId>jmmv</userId>
+    </slave>
+    <slave>
+      <name>havoc.ysv.freebsd.org</name>
+      <description></description>
+      <remoteFS>/builds</remoteFS>
+      <numExecutors>10</numExecutors>
+      <mode>EXCLUSIVE</mode>
+      <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.5">
+        <host>jenkins-10.freebsd.org</host>
+        <port>22</port>
+        <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
+      </launcher>
+      <label>FreeBSD-10</label>
+      <nodeProperties/>
+      <userId>rodrigc</userId>
     </slave>
   </slaves>
   <quietPeriod>5</quietPeriod>
