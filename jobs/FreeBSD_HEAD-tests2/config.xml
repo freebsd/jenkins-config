@@ -21,8 +21,8 @@
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>sudo python ~rodrigc/script/run-tests.py -f ~rodrigc/scripts/config.json
-sudo python ~rodrigc/script/extract-logs.py -f ~rodrigc/scripts/config.json</command>
+      <command>sudo python ~rodrigc/script/run-tests.py -f ~rodrigc/script/config.json
+sudo python ~rodrigc/script/extract-logs.py -f ~rodrigc/script/config.json</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
