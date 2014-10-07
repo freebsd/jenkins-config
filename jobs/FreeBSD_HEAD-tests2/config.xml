@@ -11,7 +11,7 @@
   <keepDependencies>false</keepDependencies>
   <properties/>
   <scm class="hudson.scm.NullSCM"/>
-  <assignedNode>jenkins-10.freebsd.org</assignedNode>
+  <assignedNode>havoc.ysv.freebsd.org</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
@@ -21,8 +21,8 @@
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>cat $WORKSPACE/test-report.txt
-touch $WORKSPACE/*.xml</command>
+      <command>sudo python ~rodrigc/scripts/run-tests.py -f ~rodrigc/scripts/config.json
+sudo python ~rodrigc/scripts/extract-logs.py -f ~rodrigc/scripts/config.json</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
@@ -32,10 +32,10 @@ touch $WORKSPACE/*.xml</command>
       <testDataPublishers/>
       <healthScaleFactor>1.0</healthScaleFactor>
     </hudson.tasks.junit.JUnitResultArchiver>
-    <hudson.tasks.Mailer plugin="mailer@1.10">
+    <hudson.tasks.Mailer plugin="mailer@1.11">
       <recipients>rodrigc@freebsd.org</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
-      <sendToIndividuals>true</sendToIndividuals>
+      <sendToIndividuals>false</sendToIndividuals>
     </hudson.tasks.Mailer>
   </publishers>
   <buildWrappers/>
