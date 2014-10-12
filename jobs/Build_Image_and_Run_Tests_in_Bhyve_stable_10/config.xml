@@ -26,7 +26,7 @@
   <publishers/>
   <buildWrappers/>
   <icon/>
-  <dsl>b1 = build(&quot;Build-UFS-image&quot;, BUILD_ROOT: &quot;/build/FreeBSD_stable_10&quot;, PKG_ARCHITECTURE: &quot;freebsd:10:x86:64&quot;)
+  <dsl>b1 = build(&quot;Build-UFS-image&quot;, BUILD_ROOT: &quot;/builds/FreeBSD_stable_10&quot;, PKG_ARCHITECTURE: &quot;freebsd:10:x86:64&quot;)
 b2 = build(&quot;FreeBSD_stable_10-tests&quot;)</dsl>
   <buildNeedsWorkspace>false</buildNeedsWorkspace>
 </com.cloudbees.plugins.flow.BuildFlow>
