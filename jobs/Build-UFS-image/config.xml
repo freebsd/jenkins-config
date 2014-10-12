@@ -20,7 +20,26 @@
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="hudson.scm.NullSCM"/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.2.6">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/freebsd/freebsd-ci</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+        <relativeTargetDir>freebsd-ci</relativeTargetDir>
+      </hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+    </extensions>
+  </scm>
   <assignedNode>jenkins-10.freebsd.org</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
@@ -31,7 +50,7 @@
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>/vm/freebsd-ci/scripts/build/build-ufs-image.sh</command>
+      <command>freebsd-ci/scripts/build/build-ufs-image.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
