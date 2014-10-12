@@ -9,7 +9,17 @@
     <artifactNumToKeep>-1</artifactNumToKeep>
   </logRotator>
   <keepDependencies>false</keepDependencies>
-  <properties/>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>BUILD_ROOT</name>
+          <description></description>
+          <defaultValue>/build/FreeBSD_HEAD</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
   <scm class="hudson.scm.NullSCM"/>
   <assignedNode>jenkins-10.freebsd.org</assignedNode>
   <canRoam>false</canRoam>
@@ -21,38 +31,7 @@
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>PACKAGE_ROOT=$WORKSPACE
-BUILD_ROOT=/builds/FreeBSD_HEAD
-
-export MAKEOBJDIRPREFIX=/usr/obj
-cd $BUILD_ROOT
-
-sudo rm -fr ${PACKAGE_ROOT}/package
-mkdir -p ${PACKAGE_ROOT}/package
-sudo make installworld NO_FSCHG=yes DESTDIR=${PACKAGE_ROOT}/package
-sudo make  installkernel NO_FSCHG=yes DESTDIR=${PACKAGE_ROOT}/package
-sudo make  distribution NO_FSCHG=yes DESTDIR=${PACKAGE_ROOT}/package
-
-cd $WORKSPACE
-rm -fr tmp
-mkdir -p tmp
-(
-cat &lt;&lt;EOF
-# Device                Mountpoint      FStype  Options         Dump    Pass#
-/procfs                 /proc           procfs  rw              0       0
-fdesc                   /dev/fd         fdescfs rw              0       0
-/dev/ufs/TESTROOT             /            ufs    rw              1       1
-EOF
-) &gt; tmp/fstab
-sudo cp tmp/fstab ${PACKAGE_ROOT}/package/etc/fstab
-sudo cp /etc/resolv.conf ${PACKAGE_ROOT}/package/etc/resolv.conf
-sudo /usr/local/sbin/pkg-static -c ${PACKAGE_ROOT}/package install -y ports-mgmt/pkg devel/kyua devel/autoconf shells/bash
-sudo /usr/local/sbin/pkg-static -c ${PACKAGE_ROOT}/package delete  -y -f kyua atf lutok
-sudo /usr/local/sbin/pkg-static -c ${PACKAGE_ROOT}/package add http://people.freebsd.org/~rodrigc/kyua/pkg/freebsd:11:x86:64/atf-0.20_2.txz  http://people.freebsd.org/~rodrigc/kyua/pkg/freebsd:11:x86:64/lutok-0.4_5.txz http://people.freebsd.org/~rodrigc/kyua/pkg/freebsd:11:x86:64/kyua-0.10,3.txz
-
-sudo rm -fr $WORKSPACE/test.img
-sudo makefs -t ffs -s 2g -o label=TESTROOT $WORKSPACE/test.img $WORKSPACE/package
-sudo chmod a+w $WORKSPACE/test.img</command>
+      <command>/vm/freebsd-ci/scripts/build/build-ufs-image.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
