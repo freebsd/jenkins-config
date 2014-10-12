@@ -21,12 +21,12 @@
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>sudo python ~rodrigc/script/run-tests.py -f ~rodrigc/script/config.json
-sudo python ~rodrigc/script/extract-logs.py -f ~rodrigc/script/config.json</command>
+      <command>sudo python /vm/freebsd-ci/scripts/test/run-tests.py -f /vm/freebsd-ci/scripts/test/config/config.json
+sudo python /vm/freebsd-ci/scripts/test/extract-test-logs.py -f /vm/freebsd-ci/scripts/test/config/config.json</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.tasks.junit.JUnitResultArchiver plugin="junit@1.0">
+    <hudson.tasks.junit.JUnitResultArchiver plugin="junit@1.1">
       <testResults>test-report.xml</testResults>
       <keepLongStdio>false</keepLongStdio>
       <testDataPublishers/>
