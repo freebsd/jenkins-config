@@ -17,6 +17,11 @@
           <description></description>
           <defaultValue>/builds/FreeBSD_HEAD</defaultValue>
         </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>PKG_ARCHITECTURE</name>
+          <description></description>
+          <defaultValue>freebsd:11:x86:64</defaultValue>
+        </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
