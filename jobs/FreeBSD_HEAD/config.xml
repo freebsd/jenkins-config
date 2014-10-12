@@ -14,6 +14,7 @@
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
         <remote>svn://svn.freebsd.org/base/head</remote>
+        <credentialsId></credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
         <ignoreExternalsOption>false</ignoreExternalsOption>
@@ -46,8 +47,14 @@
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>make -j 4 buildworld
-make -j 4 buildkernel</command>
+      <command>(
+cat &lt;&lt;EOF
+echo &quot;&quot;
+EOF
+) &gt; ${WORKSPACE}/make.conf
+
+make -j 4 buildworld __MAKE_CONF=${WORKSPACE}/make.conf
+make -j 4 buildkernel __MAKE_CONF=${WORKSPACE}/make.conf</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
