@@ -12,7 +12,7 @@
   <triggers>
     <jenkins.triggers.ReverseBuildTrigger>
       <spec></spec>
-      <upstreamProjects>FreeBSD_HEAD</upstreamProjects>
+      <upstreamProjects>FreeBSD_stable_10</upstreamProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
@@ -26,7 +26,7 @@
   <publishers/>
   <buildWrappers/>
   <icon/>
-  <dsl>b1 = build(&quot;Build-UFS-image&quot;, BUILD_ROOT: &quot;/build/FreeBSD_HEAD&quot;)
-b2 = build(&quot;FreeBSD_HEAD-tests2&quot;)</dsl>
+  <dsl>b1 = build(&quot;Build-UFS-image&quot;, BUILD_ROOT: &quot;/build/FreeBSD_stable_10&quot;)
+b2 = build(&quot;FreeBSD_stable_10-tests&quot;)</dsl>
   <buildNeedsWorkspace>false</buildNeedsWorkspace>
 </com.cloudbees.plugins.flow.BuildFlow>
