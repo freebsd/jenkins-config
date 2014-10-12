@@ -10,10 +10,11 @@
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <scm class="hudson.scm.SubversionSCM" plugin="subversion@1.54">
+  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.4.3">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
         <remote>svn://svn.freebsd.org/base/stable/10</remote>
+        <credentialsId></credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
         <ignoreExternalsOption>false</ignoreExternalsOption>
@@ -46,12 +47,18 @@
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>make -j 4 buildworld
-make -j 4 buildkernel</command>
+      <command>(
+cat &lt;&lt;EOF
+WITH_TESTS=yes
+EOF
+) &gt; ${WORKSPACE}/make.conf
+
+make -j 4 buildworld __MAKE_CONF=${WORKSPACE}/make.conf
+make -j 4 buildkernel __MAKE_CONF=${WORKSPACE}/make.conf</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.tasks.Mailer plugin="mailer@1.6">
+    <hudson.tasks.Mailer plugin="mailer@1.11">
       <recipients>jenkins-admin@FreeBSD.org freebsd-stable@freebsd.org</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>true</sendToIndividuals>
