@@ -15,7 +15,7 @@
         <hudson.model.StringParameterDefinition>
           <name>BUILD_ROOT</name>
           <description></description>
-          <defaultValue>/build/FreeBSD_HEAD</defaultValue>
+          <defaultValue>/builds/FreeBSD_HEAD</defaultValue>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
