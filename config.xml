@@ -802,6 +802,8 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>FreeBSD_HEAD-tests</string>
+        <string>FreeBSD_HEAD-tests2</string>
       </jobNames>
       <jobFilters/>
       <columns>
