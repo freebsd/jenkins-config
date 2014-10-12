@@ -804,6 +804,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>FreeBSD_HEAD-tests</string>
         <string>FreeBSD_HEAD-tests2</string>
+        <string>FreeBSD_stable_10-tests</string>
       </jobNames>
       <jobFilters/>
       <columns>
