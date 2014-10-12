@@ -360,12 +360,13 @@
     <permission>hudson.scm.SCM.Tag:swills</permission>
     <permission>hudson.scm.SCM.Tag:tyler</permission>
   </authorizationStrategy>
-  <securityRealm class="hudson.security.LDAPSecurityRealm" plugin="ldap@1.6">
+  <securityRealm class="hudson.security.LDAPSecurityRealm" plugin="ldap@1.11">
     <server>ldaps://ldap1.ysv.freebsd.org</server>
     <rootDN>dc=freebsd,dc=org</rootDN>
     <inhibitInferRootDN>false</inhibitInferRootDN>
     <userSearchBase>ou=users</userSearchBase>
     <userSearch>uid={0}</userSearch>
+    <groupMembershipStrategy class="jenkins.security.plugins.ldap.FromGroupSearchLDAPGroupMembershipStrategy"/>
     <disableMailAddressResolver>false</disableMailAddressResolver>
   </securityRealm>
   <disableRememberMe>false</disableRememberMe>
@@ -375,7 +376,7 @@
   <systemMessage>&lt;img src=&quot;https://people.freebsd.org/~lwhsu/FreeBSD_logo.png&quot; /&gt;&lt;br /&gt;&lt;br /&gt;&#xd;
 This is build and test server for &lt;a href=&quot;http://www.freebsd.org&quot;&gt;The FreeBSD Project&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;&#xd;
 See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki page&lt;/a&gt; for more information.&lt;br /&gt;</systemMessage>
-  <markupFormatter class="hudson.markup.RawHtmlMarkupFormatter" plugin="antisamy-markup-formatter@1.1">
+  <markupFormatter class="hudson.markup.RawHtmlMarkupFormatter" plugin="antisamy-markup-formatter@1.2">
     <disableSyntaxHighlighting>false</disableSyntaxHighlighting>
   </markupFormatter>
   <jdks/>
@@ -390,7 +391,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <numExecutors>10</numExecutors>
       <mode>EXCLUSIVE</mode>
       <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
-      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.5">
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
         <host>jenkins-10.freebsd.org</host>
         <port>22</port>
         <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
@@ -406,7 +407,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <numExecutors>2</numExecutors>
       <mode>EXCLUSIVE</mode>
       <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
-      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.5">
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
         <host>8.8.178.210</host>
         <port>22</port>
         <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
@@ -422,7 +423,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <numExecutors>2</numExecutors>
       <mode>EXCLUSIVE</mode>
       <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
-      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.5">
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
         <host>8.8.178.211</host>
         <port>22</port>
         <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
@@ -452,7 +453,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <jenkins.security.ApiTokenProperty>
               <apiToken>smdgEPsUNzICUguWzj+jfYm85cWzcuUtKor1Xtl97SCMT4TNXfzS427rbmWoMKMF</apiToken>
             </jenkins.security.ApiTokenProperty>
-            <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.10">
+            <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.16.1">
               <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
             </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
             <hudson.model.MyViewsProperty>
@@ -492,7 +493,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <numExecutors>2</numExecutors>
       <mode>EXCLUSIVE</mode>
       <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
-      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.5">
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
         <host>8.8.178.212</host>
         <port>22</port>
         <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
@@ -519,7 +520,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <numExecutors>2</numExecutors>
       <mode>EXCLUSIVE</mode>
       <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
-      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.5">
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
         <host>8.8.178.213</host>
         <port>22</port>
         <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
@@ -535,7 +536,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <numExecutors>1</numExecutors>
       <mode>EXCLUSIVE</mode>
       <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
-      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.5">
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
         <host>scan-ci.FreeBSD.org</host>
         <port>22</port>
         <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
@@ -562,7 +563,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <numExecutors>2</numExecutors>
       <mode>EXCLUSIVE</mode>
       <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
-      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.5">
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
         <host>8.8.178.215</host>
         <port>22</port>
         <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
@@ -589,7 +590,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <numExecutors>2</numExecutors>
       <mode>EXCLUSIVE</mode>
       <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
-      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.5">
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
         <host>8.8.178.216</host>
         <port>22</port>
         <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
@@ -605,7 +606,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <numExecutors>2</numExecutors>
       <mode>EXCLUSIVE</mode>
       <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
-      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.5">
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
         <host>8.8.178.217</host>
         <port>22</port>
         <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
@@ -621,7 +622,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <numExecutors>2</numExecutors>
       <mode>EXCLUSIVE</mode>
       <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
-      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.5">
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
         <host>8.8.178.218</host>
         <port>22</port>
         <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
@@ -637,7 +638,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <numExecutors>1</numExecutors>
       <mode>EXCLUSIVE</mode>
       <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
-      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.5">
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
         <host>kyua1.nyi.freebsd.org</host>
         <port>22</port>
         <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
@@ -656,7 +657,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
         <inDemandDelay>1</inDemandDelay>
         <idleDelay>5</idleDelay>
       </retentionStrategy>
-      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.5">
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
         <host>8.8.178.207</host>
         <port>22</port>
         <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
@@ -676,7 +677,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <filterQueue>false</filterQueue>
       <properties class="hudson.model.View$PropertyList"/>
     </hudson.model.AllView>
-    <au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView plugin="build-pipeline-plugin@1.4.2">
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView plugin="build-pipeline-plugin@1.4.3">
       <owner class="hudson" reference="../../.."/>
       <name>FreeBSD_ports_ci_head</name>
       <filterExecutors>false</filterExecutors>
@@ -693,6 +694,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <alwaysAllowManualTrigger>false</alwaysAllowManualTrigger>
       <showPipelineParameters>false</showPipelineParameters>
       <showPipelineParametersInHeaders>false</showPipelineParametersInHeaders>
+      <startsWithParameters>false</startsWithParameters>
       <refreshFrequency>3</refreshFrequency>
       <showPipelineDefinitionHeader>false</showPipelineDefinitionHeader>
     </au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView>
@@ -789,6 +791,28 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
         <hudson.views.LastFailureColumn/>
         <hudson.views.LastDurationColumn/>
         <hudson.views.BuildButtonColumn/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Tests</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.projectstats.column.NumBuildsColumn plugin="project-stats-plugin@0.4"/>
       </columns>
       <recurse>false</recurse>
     </listView>
