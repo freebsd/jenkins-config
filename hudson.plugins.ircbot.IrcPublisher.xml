@@ -14,7 +14,7 @@
   <socksPort>1080</socksPort>
   <scrambledPasswords>true</scrambledPasswords>
   <defaultTargets>
-    <hudson.plugins.im.GroupChatIMMessageTarget plugin="instant-messaging@1.28">
+    <hudson.plugins.im.GroupChatIMMessageTarget plugin="instant-messaging@1.30">
       <name>#mouf</name>
       <notificationOnly>true</notificationOnly>
     </hudson.plugins.im.GroupChatIMMessageTarget>
