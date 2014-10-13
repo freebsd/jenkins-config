@@ -53,11 +53,12 @@ cat &lt;&lt;EOF
 EOF
 ) &gt; ${WORKSPACE}/make.conf
 
-
-echo &quot;&gt;&gt; ${WORKSPACE}/make.conf contains:&quot;
+set +x
+echo &quot;--------------------------------------------------------------&quot;
+echo &quot;&gt;&gt;&gt; ${WORKSPACE}/make.conf contains:&quot;
+echo &quot;--------------------------------------------------------------&quot;
 cat ${WORKSPACE}/make.conf
-echo &quot;&quot;
-echo &quot;&quot;
+set -x
 
 make -j 4 buildworld __MAKE_CONF=${WORKSPACE}/make.conf
 make -j 4 buildkernel __MAKE_CONF=${WORKSPACE}/make.conf</command>
