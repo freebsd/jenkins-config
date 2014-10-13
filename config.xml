@@ -820,7 +820,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <recurse>false</recurse>
     </listView>
   </views>
-  <primaryView>FreeBSD_src_head</primaryView>
+  <primaryView>All</primaryView>
   <slaveAgentPort>0</slaveAgentPort>
   <label></label>
   <nodeProperties/>
