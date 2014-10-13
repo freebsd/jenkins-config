@@ -53,9 +53,11 @@ cat &lt;&lt;EOF
 EOF
 ) &gt; ${WORKSPACE}/make.conf
 
-echo &quot;== Using make.conf&quot;
+
+echo &quot;&gt;&gt; ${WORKSPACE}/make.conf contains:&quot;
 cat ${WORKSPACE}/make.conf
-echo &quot;===================
+echo &quot;&quot;
+echo &quot;&quot;
 
 make -j 4 buildworld __MAKE_CONF=${WORKSPACE}/make.conf
 make -j 4 buildkernel __MAKE_CONF=${WORKSPACE}/make.conf</command>
