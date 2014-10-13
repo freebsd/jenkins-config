@@ -14,7 +14,7 @@ Check console output at $BUILD_URL to view the results.</defaultBody>
   <excludedCommitters></excludedCommitters>
   <overrideGlobalSettings>false</overrideGlobalSettings>
   <precedenceBulk>false</precedenceBulk>
-  <debugMode>true</debugMode>
+  <debugMode>false</debugMode>
   <enableSecurity>false</enableSecurity>
   <enableWatching>false</enableWatching>
 </hudson.plugins.emailext.ExtendedEmailPublisherDescriptor>
