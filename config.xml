@@ -647,6 +647,17 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <userId>swills</userId>
     </slave>
     <slave>
+      <temporaryOfflineCause class="hudson.slaves.OfflineCause$UserCause">
+        <description>
+          <holder reference="../../../../slave[2]/temporaryOfflineCause/description/holder"/>
+          <key>SlaveComputer.DisconnectedBy</key>
+          <args>
+            <string>rodrigc</string>
+            <string></string>
+          </args>
+        </description>
+        <user reference="../../../slave[2]/temporaryOfflineCause/user"/>
+      </temporaryOfflineCause>
       <name>jenkins-pci-84i386</name>
       <description></description>
       <remoteFS>/usr/local/jenkins</remoteFS>
