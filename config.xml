@@ -417,6 +417,15 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <userId>swills</userId>
     </slave>
     <slave>
+      <temporaryOfflineCause class="hudson.node_monitors.ResponseTimeMonitor$Data">
+        <past5>
+          <long>-1</long>
+          <long>-1</long>
+          <long>-1</long>
+          <long>-1</long>
+          <long>-1</long>
+        </past5>
+      </temporaryOfflineCause>
       <name>jenkins-pci-100amd64</name>
       <description></description>
       <remoteFS>/usr/local/jenkins</remoteFS>
@@ -632,6 +641,15 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <userId>swills</userId>
     </slave>
     <slave>
+      <temporaryOfflineCause class="hudson.node_monitors.ResponseTimeMonitor$Data">
+        <past5>
+          <long>-1</long>
+          <long>-1</long>
+          <long>-1</long>
+          <long>-1</long>
+          <long>-1</long>
+        </past5>
+      </temporaryOfflineCause>
       <name>kyua1.nyi.freebsd.org</name>
       <description></description>
       <remoteFS>/builds</remoteFS>
