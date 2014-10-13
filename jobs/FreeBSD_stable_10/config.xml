@@ -57,8 +57,10 @@ EOF
 set +x
 echo &quot;--------------------------------------------------------------&quot;
 echo &quot;&gt;&gt;&gt; ${WORKSPACE}/make.conf contains:&quot;
-echo &quot;--------------------------------------------------------------&quot;
+set -x
 cat ${WORKSPACE}/make.conf
+set +x
+echo &quot;--------------------------------------------------------------&quot;
 set -x
 
 make -j 4 buildworld __MAKE_CONF=${WORKSPACE}/make.conf
