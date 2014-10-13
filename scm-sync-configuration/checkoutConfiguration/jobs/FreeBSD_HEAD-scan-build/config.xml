@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>This build uses the &lt;a href=&quot;http://clang-analyzer.llvm.org/&quot;&gt;clang static analyzer&lt;/a&gt;.&lt;br&gt;&#xd;
+See results at: &lt;a href=&quot;http://scan.freebsd.org&quot;&gt;http://scan.freebsd.org&lt;/a&gt;&#xd;
+</description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>-1</daysToKeep>
+    <numToKeep>-1</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="org.jenkinsci.plugins.multiplescms.MultiSCM" plugin="multiple-scms@0.3">
+    <scms>
+      <hudson.scm.SubversionSCM plugin="subversion@1.54">
+        <locations>
+          <hudson.scm.SubversionSCM_-ModuleLocation>
+            <remote>svn://svn.freebsd.org/base/head</remote>
+            <local>src</local>
+            <depthOption>infinity</depthOption>
+            <ignoreExternalsOption>false</ignoreExternalsOption>
+          </hudson.scm.SubversionSCM_-ModuleLocation>
+          <hudson.scm.SubversionSCM_-ModuleLocation>
+            <remote>http://llvm.org/svn/llvm-project/llvm/trunk</remote>
+            <local>llvm</local>
+            <depthOption>infinity</depthOption>
+            <ignoreExternalsOption>false</ignoreExternalsOption>
+          </hudson.scm.SubversionSCM_-ModuleLocation>
+          <hudson.scm.SubversionSCM_-ModuleLocation>
+            <remote>http://llvm.org/svn/llvm-project/cfe/trunk</remote>
+            <local>llvm/tools/clang</local>
+            <depthOption>infinity</depthOption>
+            <ignoreExternalsOption>false</ignoreExternalsOption>
+          </hudson.scm.SubversionSCM_-ModuleLocation>
+        </locations>
+        <excludedRegions></excludedRegions>
+        <includedRegions></includedRegions>
+        <excludedUsers></excludedUsers>
+        <excludedRevprop></excludedRevprop>
+        <excludedCommitMessages></excludedCommitMessages>
+        <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+        <ignoreDirPropChanges>false</ignoreDirPropChanges>
+        <filterChangelog>false</filterChangelog>
+      </hudson.scm.SubversionSCM>
+      <hudson.plugins.git.GitSCM plugin="git@2.0.4">
+        <configVersion>2</configVersion>
+        <userRemoteConfigs>
+          <hudson.plugins.git.UserRemoteConfig>
+            <url>https://github.com/freebsd/freebsd-ci.git</url>
+          </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches>
+          <hudson.plugins.git.BranchSpec>
+            <name>*/master</name>
+          </hudson.plugins.git.BranchSpec>
+        </branches>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <submoduleCfg class="list"/>
+        <extensions>
+          <hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+            <relativeTargetDir>freebsd-ci</relativeTargetDir>
+          </hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+        </extensions>
+      </hudson.plugins.git.GitSCM>
+    </scms>
+  </scm>
+  <assignedNode>scan-ci</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>3 6 * * 1</spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command># build llvm/clang
+
+WORKDIR=`pwd -P`
+
+cd llvm
+./configure --enable-optimized --disable-assertions --disable-docs --enable-targets=host \
+    --with-c-include-dirs=${WORKDIR}/obj${WORKDIR}/src/tmp/usr/include \
+    --with-cxx-include-root=${WORKDIR}/obj${WORKDIR}/src/tmp/usr/include
+
+gmake -j4
+
+cp -p ./tools/clang/tools/scan-build/scan-build \
+      ./tools/clang/tools/scan-build/scanview.css \
+      ./tools/clang/tools/scan-build/sorttable.js \
+      Release/bin
+
+cp -p ./tools/clang/tools/scan-build/ccc-analyzer \
+      ./tools/clang/tools/scan-build/c++-analyzer \
+      Release/bin</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command># scan the world!
+sh freebsd-ci/scan-build/scan-world</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.Mailer plugin="mailer@1.11">
+      <recipients>jenkins-admin@FreeBSD.org</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers/>
+</project>
