@@ -401,6 +401,60 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <userId>jenkins</userId>
     </slave>
     <slave>
+      <temporaryOfflineCause class="hudson.slaves.OfflineCause$UserCause">
+        <description>
+          <holder>
+            <owner>hudson.slaves.Messages</owner>
+          </holder>
+          <key>SlaveComputer.DisconnectedBy</key>
+          <args>
+            <string>rodrigc</string>
+            <string></string>
+          </args>
+        </description>
+        <user>
+          <fullName>rodrigc</fullName>
+          <properties>
+            <hudson.model.PaneStatusProperties>
+              <collapsed/>
+            </hudson.model.PaneStatusProperties>
+            <jenkins.security.ApiTokenProperty>
+              <apiToken>smdgEPsUNzICUguWzj+jfYm85cWzcuUtKor1Xtl97SCMT4TNXfzS427rbmWoMKMF</apiToken>
+            </jenkins.security.ApiTokenProperty>
+            <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.16.1">
+              <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
+            </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
+            <hudson.model.MyViewsProperty>
+              <views>
+                <hudson.model.AllView>
+                  <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
+                  <name>All</name>
+                  <filterExecutors>false</filterExecutors>
+                  <filterQueue>false</filterQueue>
+                  <properties class="hudson.model.View$PropertyList"/>
+                </hudson.model.AllView>
+              </views>
+            </hudson.model.MyViewsProperty>
+            <hudson.search.UserSearchProperty>
+              <insensitiveSearch>false</insensitiveSearch>
+            </hudson.search.UserSearchProperty>
+            <jenkins.security.LastGrantedAuthoritiesProperty>
+              <roles>
+                <string>rodrigc</string>
+                <string>ROLE_RELENG</string>
+                <string>ROLE_RODRIGC</string>
+                <string>authenticated</string>
+                <string>releng</string>
+              </roles>
+              <timestamp>1397118522866</timestamp>
+            </jenkins.security.LastGrantedAuthoritiesProperty>
+            <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
+            <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.11">
+              <emailAddress>rodrigc@FreeBSD.org</emailAddress>
+            </hudson.tasks.Mailer_-UserProperty>
+          </properties>
+        </user>
+      </temporaryOfflineCause>
       <name>jenkins-pci-92amd64</name>
       <description></description>
       <remoteFS>/usr/local/jenkins</remoteFS>
@@ -444,9 +498,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
     <slave>
       <temporaryOfflineCause class="hudson.slaves.OfflineCause$UserCause">
         <description>
-          <holder>
-            <owner>hudson.slaves.Messages</owner>
-          </holder>
+          <holder reference="../../../../slave[2]/temporaryOfflineCause/description/holder"/>
           <key>SlaveComputer.DisconnectedBy</key>
           <args>
             <string>rodrigc</string>
@@ -514,55 +566,14 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
     <slave>
       <temporaryOfflineCause class="hudson.slaves.OfflineCause$UserCause">
         <description>
-          <holder reference="../../../../slave[4]/temporaryOfflineCause/description/holder"/>
+          <holder reference="../../../../slave[2]/temporaryOfflineCause/description/holder"/>
           <key>SlaveComputer.DisconnectedBy</key>
           <args>
             <string>rodrigc</string>
             <string></string>
           </args>
         </description>
-        <user>
-          <fullName>rodrigc</fullName>
-          <properties>
-            <hudson.model.PaneStatusProperties>
-              <collapsed/>
-            </hudson.model.PaneStatusProperties>
-            <jenkins.security.ApiTokenProperty>
-              <apiToken>smdgEPsUNzICUguWzj+jfYm85cWzcuUtKor1Xtl97SCMT4TNXfzS427rbmWoMKMF</apiToken>
-            </jenkins.security.ApiTokenProperty>
-            <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.16.1">
-              <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
-            </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
-            <hudson.model.MyViewsProperty>
-              <views>
-                <hudson.model.AllView>
-                  <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
-                  <name>All</name>
-                  <filterExecutors>false</filterExecutors>
-                  <filterQueue>false</filterQueue>
-                  <properties class="hudson.model.View$PropertyList"/>
-                </hudson.model.AllView>
-              </views>
-            </hudson.model.MyViewsProperty>
-            <hudson.search.UserSearchProperty>
-              <insensitiveSearch>false</insensitiveSearch>
-            </hudson.search.UserSearchProperty>
-            <jenkins.security.LastGrantedAuthoritiesProperty>
-              <roles>
-                <string>rodrigc</string>
-                <string>ROLE_RELENG</string>
-                <string>ROLE_RODRIGC</string>
-                <string>authenticated</string>
-                <string>releng</string>
-              </roles>
-              <timestamp>1397118522866</timestamp>
-            </jenkins.security.LastGrantedAuthoritiesProperty>
-            <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
-            <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.11">
-              <emailAddress>rodrigc@FreeBSD.org</emailAddress>
-            </hudson.tasks.Mailer_-UserProperty>
-          </properties>
-        </user>
+        <user reference="../../../slave[2]/temporaryOfflineCause/user"/>
       </temporaryOfflineCause>
       <name>jenkins-pci-headamd64</name>
       <description></description>
@@ -598,7 +609,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
     <slave>
       <temporaryOfflineCause class="hudson.slaves.OfflineCause$UserCause">
         <description>
-          <holder reference="../../../../slave[4]/temporaryOfflineCause/description/holder"/>
+          <holder reference="../../../../slave[2]/temporaryOfflineCause/description/holder"/>
           <key>SlaveComputer.DisconnectedBy</key>
           <args>
             <string>rodrigc</string>
@@ -625,14 +636,14 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
     <slave>
       <temporaryOfflineCause class="hudson.slaves.OfflineCause$UserCause">
         <description>
-          <holder reference="../../../../slave[4]/temporaryOfflineCause/description/holder"/>
+          <holder reference="../../../../slave[2]/temporaryOfflineCause/description/holder"/>
           <key>SlaveComputer.DisconnectedBy</key>
           <args>
             <string>rodrigc</string>
             <string></string>
           </args>
         </description>
-        <user reference="../../../slave[5]/temporaryOfflineCause/user"/>
+        <user reference="../../../slave[2]/temporaryOfflineCause/user"/>
       </temporaryOfflineCause>
       <name>jenkins-pci-headi386</name>
       <description></description>
@@ -652,14 +663,14 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
     <slave>
       <temporaryOfflineCause class="hudson.slaves.OfflineCause$UserCause">
         <description>
-          <holder reference="../../../../slave[4]/temporaryOfflineCause/description/holder"/>
+          <holder reference="../../../../slave[2]/temporaryOfflineCause/description/holder"/>
           <key>SlaveComputer.DisconnectedBy</key>
           <args>
             <string>rodrigc</string>
             <string></string>
           </args>
         </description>
-        <user reference="../../../slave[5]/temporaryOfflineCause/user"/>
+        <user reference="../../../slave[2]/temporaryOfflineCause/user"/>
       </temporaryOfflineCause>
       <name>jenkins-pci-92i386</name>
       <description></description>
