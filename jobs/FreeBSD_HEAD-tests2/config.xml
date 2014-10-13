@@ -9,7 +9,17 @@
     <artifactNumToKeep>-1</artifactNumToKeep>
   </logRotator>
   <keepDependencies>false</keepDependencies>
-  <properties/>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>CONFIG_FILE</name>
+          <description></description>
+          <defaultValue>/vm/freebsd-ci/scripts/test/config/config.json</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
   <scm class="hudson.scm.NullSCM"/>
   <assignedNode>havoc.ysv.freebsd.org</assignedNode>
   <canRoam>false</canRoam>
@@ -21,8 +31,8 @@
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>sudo python /vm/freebsd-ci/scripts/test/run-tests.py -f /vm/freebsd-ci/scripts/test/config/config.json
-sudo python /vm/freebsd-ci/scripts/test/extract-test-logs.py -f /vm/freebsd-ci/scripts/test/config/config.json</command>
+      <command>sudo python /vm/freebsd-ci/scripts/test/run-tests.py -f $CONFIG_FILE
+sudo python /vm/freebsd-ci/scripts/test/extract-test-logs.py -f $CONFIG_FILE</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
