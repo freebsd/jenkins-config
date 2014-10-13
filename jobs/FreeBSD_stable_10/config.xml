@@ -49,9 +49,15 @@
     <hudson.tasks.Shell>
       <command>(
 cat &lt;&lt;EOF
+# Put make.conf entries here
 WITH_TESTS=yes
 EOF
 ) &gt; ${WORKSPACE}/make.conf
+
+echo &quot;&gt;&gt; ${WORKSPACE}/make.conf contains:&quot;
+cat ${WORKSPACE}/make.conf
+echo &quot;&quot;
+echo &quot;&quot;
 
 make -j 4 buildworld __MAKE_CONF=${WORKSPACE}/make.conf
 make -j 4 buildkernel __MAKE_CONF=${WORKSPACE}/make.conf</command>
