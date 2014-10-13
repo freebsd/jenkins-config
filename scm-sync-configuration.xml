@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson.plugins.scm__sync__configuration.ScmSyncConfigurationPlugin version="1">
   <scm class="hudson.plugins.scm_sync_configuration.scms.ScmSyncGitSCM"/>
-  <scmRepositoryUrl>scm:git:/builds/backup/jenkins-config.git</scmRepositoryUrl>
+  <scmRepositoryUrl>scm:git:git@github:freebsd/jenkins-config</scmRepositoryUrl>
   <noUserCommitMessage>false</noUserCommitMessage>
   <displayStatus>false</displayStatus>
   <commitMessagePattern>[message]</commitMessagePattern>
