@@ -43,9 +43,9 @@ sudo python /vm/freebsd-ci/scripts/test/extract-test-logs.py -f $CONFIG_FILE</co
       <healthScaleFactor>1.0</healthScaleFactor>
     </hudson.tasks.junit.JUnitResultArchiver>
     <hudson.tasks.Mailer plugin="mailer@1.11">
-      <recipients>rodrigc@freebsd.org</recipients>
+      <recipients>$EMAILS</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
-      <sendToIndividuals>false</sendToIndividuals>
+      <sendToIndividuals>true</sendToIndividuals>
     </hudson.tasks.Mailer>
   </publishers>
   <buildWrappers/>
