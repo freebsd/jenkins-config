@@ -26,8 +26,8 @@
   <publishers/>
   <buildWrappers/>
   <icon/>
-  <dsl>b1 = build(&quot;Build-UFS-image&quot;, BUILD_ROOT: &quot;/builds/FreeBSD_stable_10&quot;, PKG_ARCHITECTURE: &quot;freebsd:10:x86:64&quot;, CONFIG_FILE: &quot;/vm/freebsd-ci/scripts/test/config/config-stable-10.json&quot;)
-b2 = build(&quot;FreeBSD_stable_10-tests&quot;)
+  <dsl>b1 = build(&quot;Build-UFS-image&quot;, BUILD_ROOT: &quot;/builds/FreeBSD_stable_10&quot;, PKG_ARCHITECTURE: &quot;freebsd:10:x86:64&quot;, CONFIG_FILE: &quot;/vm/freebsd-ci/scripts/test/config/config-stable-10.json&quot;, EMAILS: &quot;freebsd-stable@freebsd.org&quot;)
+b2 = build(&quot;FreeBSD_stable_10-tests&quot;, EMAILS: &quot;freebsd-stable@freebsd.org&quot;)
 
 </dsl>
   <buildNeedsWorkspace>false</buildNeedsWorkspace>
