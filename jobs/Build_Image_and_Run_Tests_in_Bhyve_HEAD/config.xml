@@ -26,8 +26,8 @@
   <publishers/>
   <buildWrappers/>
   <icon/>
-  <dsl>b1 = build(&quot;Build-UFS-image&quot;, BUILD_ROOT: &quot;/builds/FreeBSD_HEAD&quot;)
-b2 = build(&quot;FreeBSD_HEAD-tests2&quot;)
+  <dsl>b1 = build(&quot;Build-UFS-image&quot;, BUILD_ROOT: &quot;/builds/FreeBSD_HEAD&quot;, EMAILS: &quot;freebsd-current@freebsd.org&quot;)
+b2 = build(&quot;FreeBSD_HEAD-tests2&quot;, EMAILS: &quot;freebsd-current@freebsd.org&quot;)
 
 </dsl>
   <buildNeedsWorkspace>false</buildNeedsWorkspace>
