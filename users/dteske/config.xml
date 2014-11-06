@@ -28,7 +28,12 @@
       <insensitiveSearch>false</insensitiveSearch>
     </hudson.search.UserSearchProperty>
     <jenkins.security.LastGrantedAuthoritiesProperty>
-      <timestamp>0</timestamp>
+      <roles>
+        <string>dteske</string>
+        <string>authenticated</string>
+        <string>ROLE_DTESKE</string>
+      </roles>
+      <timestamp>1415308719608</timestamp>
     </jenkins.security.LastGrantedAuthoritiesProperty>
   </properties>
 </user>
