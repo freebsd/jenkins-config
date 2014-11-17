@@ -742,6 +742,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
         <string>FreeBSD_DOC</string>
+        <string>FreeBSD_Doc-igor</string>
       </jobNames>
       <jobFilters/>
       <columns>
