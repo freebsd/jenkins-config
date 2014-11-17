@@ -8,7 +8,7 @@
     <jenkins.security.ApiTokenProperty>
       <apiToken>ECfSYpOgYk9JAg5fIRQBTTBNkZPVl0hvgm3tUpAIK5WMT4TNXfzS427rbmWoMKMF</apiToken>
     </jenkins.security.ApiTokenProperty>
-    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.10">
+    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.16.1">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
     </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
     <hudson.model.MyViewsProperty>
@@ -25,17 +25,19 @@
     <hudson.search.UserSearchProperty>
       <insensitiveSearch>false</insensitiveSearch>
     </hudson.search.UserSearchProperty>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.6">
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.11">
       <emailAddress>lwhsu@FreeBSD.org</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
     <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
     <jenkins.security.LastGrantedAuthoritiesProperty>
       <roles>
+        <string>phabric</string>
+        <string>ROLE_LWHSU</string>
+        <string>ROLE_PHABRIC</string>
         <string>lwhsu</string>
         <string>authenticated</string>
-        <string>ROLE_LWHSU</string>
       </roles>
-      <timestamp>1398365538263</timestamp>
+      <timestamp>1416242306701</timestamp>
     </jenkins.security.LastGrantedAuthoritiesProperty>
   </properties>
 </user>
