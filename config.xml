@@ -652,6 +652,22 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <nodeProperties/>
       <userId>rodrigc</userId>
     </slave>
+    <slave>
+      <name>jenkins10a.freebsd.org</name>
+      <description></description>
+      <remoteFS>/builds</remoteFS>
+      <numExecutors>10</numExecutors>
+      <mode>EXCLUSIVE</mode>
+      <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
+        <host>jenkins-10.freebsd.org</host>
+        <port>22</port>
+        <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
+      </launcher>
+      <label>FreeBSD-10</label>
+      <nodeProperties/>
+      <userId>rodrigc</userId>
+    </slave>
   </slaves>
   <quietPeriod>5</quietPeriod>
   <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
