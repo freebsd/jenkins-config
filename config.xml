@@ -660,9 +660,11 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <mode>EXCLUSIVE</mode>
       <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
       <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.7.1">
-        <host>jenkins-10.freebsd.org</host>
+        <host>8.8.178.210</host>
         <port>22</port>
         <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
+        <maxNumRetries>0</maxNumRetries>
+        <retryWaitTime>0</retryWaitTime>
       </launcher>
       <label>FreeBSD-10</label>
       <nodeProperties/>
