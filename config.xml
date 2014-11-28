@@ -668,14 +668,16 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <userId>swills</userId>
     </slave>
     <slave>
-      <temporaryOfflineCause class="hudson.node_monitors.ResponseTimeMonitor$Data">
-        <past5>
-          <long>-1</long>
-          <long>-1</long>
-          <long>-1</long>
-          <long>-1</long>
-          <long>-1</long>
-        </past5>
+      <temporaryOfflineCause class="hudson.slaves.OfflineCause$UserCause">
+        <description>
+          <holder reference="../../../../slave[3]/temporaryOfflineCause/description/holder"/>
+          <key>SlaveComputer.DisconnectedBy</key>
+          <args>
+            <string>rodrigc</string>
+            <string></string>
+          </args>
+        </description>
+        <user reference="../../../slave[3]/temporaryOfflineCause/user"/>
       </temporaryOfflineCause>
       <name>kyua1.nyi.freebsd.org</name>
       <description></description>
