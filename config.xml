@@ -530,48 +530,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <string></string>
           </args>
         </description>
-        <user>
-          <fullName>rodrigc</fullName>
-          <properties>
-            <hudson.model.PaneStatusProperties>
-              <collapsed/>
-            </hudson.model.PaneStatusProperties>
-            <jenkins.security.ApiTokenProperty>
-              <apiToken>smdgEPsUNzICUguWzj+jfYm85cWzcuUtKor1Xtl97SCMT4TNXfzS427rbmWoMKMF</apiToken>
-            </jenkins.security.ApiTokenProperty>
-            <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.18">
-              <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
-            </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
-            <hudson.model.MyViewsProperty>
-              <views>
-                <hudson.model.AllView>
-                  <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
-                  <name>All</name>
-                  <filterExecutors>false</filterExecutors>
-                  <filterQueue>false</filterQueue>
-                  <properties class="hudson.model.View$PropertyList"/>
-                </hudson.model.AllView>
-              </views>
-            </hudson.model.MyViewsProperty>
-            <hudson.search.UserSearchProperty>
-              <insensitiveSearch>false</insensitiveSearch>
-            </hudson.search.UserSearchProperty>
-            <jenkins.security.LastGrantedAuthoritiesProperty>
-              <roles>
-                <string>rodrigc</string>
-                <string>ROLE_RELENG</string>
-                <string>ROLE_RODRIGC</string>
-                <string>authenticated</string>
-                <string>releng</string>
-              </roles>
-              <timestamp>1397118522866</timestamp>
-            </jenkins.security.LastGrantedAuthoritiesProperty>
-            <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
-            <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.11">
-              <emailAddress>rodrigc@FreeBSD.org</emailAddress>
-            </hudson.tasks.Mailer_-UserProperty>
-          </properties>
-        </user>
+        <user reference="../../../slave[3]/temporaryOfflineCause/user"/>
       </temporaryOfflineCause>
       <name>jenkins-pci-headamd64</name>
       <description></description>
@@ -639,7 +598,48 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <string></string>
           </args>
         </description>
-        <user reference="../../../slave[3]/temporaryOfflineCause/user"/>
+        <user>
+          <fullName>rodrigc</fullName>
+          <properties>
+            <hudson.model.PaneStatusProperties>
+              <collapsed/>
+            </hudson.model.PaneStatusProperties>
+            <jenkins.security.ApiTokenProperty>
+              <apiToken>smdgEPsUNzICUguWzj+jfYm85cWzcuUtKor1Xtl97SCMT4TNXfzS427rbmWoMKMF</apiToken>
+            </jenkins.security.ApiTokenProperty>
+            <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.18">
+              <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
+            </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
+            <hudson.model.MyViewsProperty>
+              <views>
+                <hudson.model.AllView>
+                  <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
+                  <name>All</name>
+                  <filterExecutors>false</filterExecutors>
+                  <filterQueue>false</filterQueue>
+                  <properties class="hudson.model.View$PropertyList"/>
+                </hudson.model.AllView>
+              </views>
+            </hudson.model.MyViewsProperty>
+            <hudson.search.UserSearchProperty>
+              <insensitiveSearch>false</insensitiveSearch>
+            </hudson.search.UserSearchProperty>
+            <jenkins.security.LastGrantedAuthoritiesProperty>
+              <roles>
+                <string>rodrigc</string>
+                <string>ROLE_RELENG</string>
+                <string>ROLE_RODRIGC</string>
+                <string>authenticated</string>
+                <string>releng</string>
+              </roles>
+              <timestamp>1397118522866</timestamp>
+            </jenkins.security.LastGrantedAuthoritiesProperty>
+            <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
+            <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.11">
+              <emailAddress>rodrigc@FreeBSD.org</emailAddress>
+            </hudson.tasks.Mailer_-UserProperty>
+          </properties>
+        </user>
       </temporaryOfflineCause>
       <name>jenkins-pci-headi386</name>
       <description></description>
@@ -666,7 +666,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <string></string>
           </args>
         </description>
-        <user reference="../../../slave[3]/temporaryOfflineCause/user"/>
+        <user reference="../../../slave[8]/temporaryOfflineCause/user"/>
       </temporaryOfflineCause>
       <name>jenkins-pci-92i386</name>
       <description></description>
@@ -693,7 +693,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <string></string>
           </args>
         </description>
-        <user reference="../../../slave[5]/temporaryOfflineCause/user"/>
+        <user reference="../../../slave[3]/temporaryOfflineCause/user"/>
       </temporaryOfflineCause>
       <name>jenkins-pci-84i386</name>
       <description></description>
@@ -720,7 +720,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <string></string>
           </args>
         </description>
-        <user reference="../../../slave[5]/temporaryOfflineCause/user"/>
+        <user reference="../../../slave[3]/temporaryOfflineCause/user"/>
       </temporaryOfflineCause>
       <name>kyua1.nyi.freebsd.org</name>
       <description></description>
