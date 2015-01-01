@@ -4,7 +4,7 @@
   <description>Tests</description>
   <logRotator class="hudson.tasks.LogRotator">
     <daysToKeep>-1</daysToKeep>
-    <numToKeep>-1</numToKeep>
+    <numToKeep>200</numToKeep>
     <artifactDaysToKeep>3</artifactDaysToKeep>
     <artifactNumToKeep>-1</artifactNumToKeep>
   </logRotator>
@@ -36,10 +36,9 @@ sudo python /vm/freebsd-ci/scripts/test/extract-test-logs.py -f $CONFIG_FILE</co
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.tasks.junit.JUnitResultArchiver plugin="junit@1.1">
+    <hudson.tasks.junit.JUnitResultArchiver plugin="junit@1.2">
       <testResults>test-report.xml</testResults>
       <keepLongStdio>false</keepLongStdio>
-      <testDataPublishers/>
       <healthScaleFactor>1.0</healthScaleFactor>
     </hudson.tasks.junit.JUnitResultArchiver>
     <hudson.tasks.Mailer plugin="mailer@1.11">
