@@ -15,7 +15,9 @@
         <hudson.model.TextParameterDefinition>
           <name>MAKE_CONF_FILE</name>
           <description></description>
-          <defaultValue>TARGET=sparc64</defaultValue>
+          <defaultValue>TARGET=mips
+TARGET_ARCH=mips
+KERNCONF=MALTA</defaultValue>
         </hudson.model.TextParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
@@ -47,18 +49,7 @@
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers>
-    <jenkins.triggers.ReverseBuildTrigger>
-      <spec></spec>
-      <upstreamProjects>FreeBSD_HEAD</upstreamProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-        <completeBuild>true</completeBuild>
-      </threshold>
-    </jenkins.triggers.ReverseBuildTrigger>
-  </triggers>
+  <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
@@ -69,7 +60,7 @@
   </builders>
   <publishers>
     <hudson.tasks.Mailer plugin="mailer@1.11">
-      <recipients>jenkins-admin@FreeBSD.org rodrigc@freebsd.org</recipients>
+      <recipients>jenkins-admin@FreeBSD.org  freebsd-mips@freebsd.org </recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>true</sendToIndividuals>
     </hudson.tasks.Mailer>
