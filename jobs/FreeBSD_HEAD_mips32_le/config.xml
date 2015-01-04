@@ -16,7 +16,7 @@
           <name>MAKE_CONF_FILE</name>
           <description></description>
           <defaultValue>TARGET=mips
-TARGET_ARCH=mips
+TARGET_ARCH=mipsel
 KERNCONF=MALTA</defaultValue>
         </hudson.model.TextParameterDefinition>
       </parameterDefinitions>
