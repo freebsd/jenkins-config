@@ -13,12 +13,7 @@
   <socksHost></socksHost>
   <socksPort>1080</socksPort>
   <scrambledPasswords>true</scrambledPasswords>
-  <defaultTargets>
-    <hudson.plugins.im.GroupChatIMMessageTarget plugin="instant-messaging@1.30">
-      <name>#mouf</name>
-      <notificationOnly>true</notificationOnly>
-    </hudson.plugins.im.GroupChatIMMessageTarget>
-  </defaultTargets>
+  <defaultTargets class="empty-list"/>
   <commandPrefix>!jenkins</commandPrefix>
   <hudsonLogin></hudsonLogin>
   <useNotice>false</useNotice>
