@@ -71,18 +71,6 @@ nice sudo poudriere bulk -N -t -C -B ${BUILD_NUMBER} -f ${TMPFILE} -p default -j
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>
     </hudson.tasks.Mailer>
-    <hudson.plugins.ircbot.IrcPublisher plugin="ircbot@2.25">
-      <targets class="empty-list"/>
-      <strategy>FAILURE_AND_FIXED</strategy>
-      <notifyOnBuildStart>false</notifyOnBuildStart>
-      <notifySuspects>false</notifySuspects>
-      <notifyCulprits>false</notifyCulprits>
-      <notifyFixers>false</notifyFixers>
-      <notifyUpstreamCommitters>false</notifyUpstreamCommitters>
-      <buildToChatNotifier class="hudson.plugins.im.build_notify.SummaryOnlyBuildToChatNotifier" plugin="instant-messaging@1.30"/>
-      <matrixMultiplier>ONLY_CONFIGURATIONS</matrixMultiplier>
-      <channels/>
-    </hudson.plugins.ircbot.IrcPublisher>
   </publishers>
   <buildWrappers/>
 </project>
