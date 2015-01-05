@@ -4,10 +4,11 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <scm class="hudson.scm.SubversionSCM" plugin="subversion@1.54">
+  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.4.5">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
         <remote>http://svn0.us-west.freebsd.org/ports/head@$SVN_REVISION</remote>
+        <credentialsId></credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
         <ignoreExternalsOption>false</ignoreExternalsOption>
@@ -65,25 +66,20 @@ nice sudo poudriere bulk -N -t -C -B ${BUILD_NUMBER} -f ${TMPFILE} -p default -j
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.tasks.Mailer plugin="mailer@1.8">
+    <hudson.tasks.Mailer plugin="mailer@1.11">
       <recipients>swills@FreeBSD.org</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>
     </hudson.tasks.Mailer>
     <hudson.plugins.ircbot.IrcPublisher plugin="ircbot@2.25">
-      <targets>
-        <hudson.plugins.im.GroupChatIMMessageTarget plugin="instant-messaging@1.28">
-          <name>#mouf</name>
-          <notificationOnly>true</notificationOnly>
-        </hudson.plugins.im.GroupChatIMMessageTarget>
-      </targets>
+      <targets class="empty-list"/>
       <strategy>FAILURE_AND_FIXED</strategy>
       <notifyOnBuildStart>false</notifyOnBuildStart>
       <notifySuspects>false</notifySuspects>
       <notifyCulprits>false</notifyCulprits>
       <notifyFixers>false</notifyFixers>
       <notifyUpstreamCommitters>false</notifyUpstreamCommitters>
-      <buildToChatNotifier class="hudson.plugins.im.build_notify.SummaryOnlyBuildToChatNotifier" plugin="instant-messaging@1.28"/>
+      <buildToChatNotifier class="hudson.plugins.im.build_notify.SummaryOnlyBuildToChatNotifier" plugin="instant-messaging@1.30"/>
       <matrixMultiplier>ONLY_CONFIGURATIONS</matrixMultiplier>
       <channels/>
     </hudson.plugins.ircbot.IrcPublisher>
