@@ -89,12 +89,12 @@ make -j 4 buildkernel __MAKE_CONF=${WORKSPACE}/make.conf</command>
         </hudson.plugins.im.GroupChatIMMessageTarget>
       </targets>
       <strategy>ALL</strategy>
-      <notifyOnBuildStart>false</notifyOnBuildStart>
+      <notifyOnBuildStart>true</notifyOnBuildStart>
       <notifySuspects>false</notifySuspects>
       <notifyCulprits>false</notifyCulprits>
       <notifyFixers>false</notifyFixers>
       <notifyUpstreamCommitters>false</notifyUpstreamCommitters>
-      <buildToChatNotifier class="hudson.plugins.im.build_notify.DefaultBuildToChatNotifier" plugin="instant-messaging@1.30"/>
+      <buildToChatNotifier class="hudson.plugins.im.build_notify.PrintFailingTestsBuildToChatNotifier" plugin="instant-messaging@1.30"/>
       <matrixMultiplier>ONLY_CONFIGURATIONS</matrixMultiplier>
       <channels/>
     </hudson.plugins.ircbot.IrcPublisher>
