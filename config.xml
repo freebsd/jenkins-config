@@ -1,11 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson>
-  <temporaryOfflineCause class="hudson.node_monitors.DiskSpaceMonitorDescriptor$DiskSpace">
-    <path>/usr/local/jenkins</path>
-    <size>691230208</size>
-    <triggered>true</triggered>
-    <trigger>hudson.node_monitors.DiskSpaceMonitor</trigger>
-  </temporaryOfflineCause>
   <disabledAdministrativeMonitors/>
   <version>1.590</version>
   <numExecutors>4</numExecutors>
