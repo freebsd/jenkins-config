@@ -13,7 +13,12 @@
   <socksHost></socksHost>
   <socksPort>1080</socksPort>
   <scrambledPasswords>true</scrambledPasswords>
-  <defaultTargets class="empty-list"/>
+  <defaultTargets>
+    <hudson.plugins.im.GroupChatIMMessageTarget plugin="instant-messaging@1.30">
+      <name>#freebsd-commits</name>
+      <notificationOnly>true</notificationOnly>
+    </hudson.plugins.im.GroupChatIMMessageTarget>
+  </defaultTargets>
   <commandPrefix>!jenkins</commandPrefix>
   <hudsonLogin></hudsonLogin>
   <useNotice>false</useNotice>
