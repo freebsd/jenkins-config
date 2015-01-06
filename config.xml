@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson>
+  <temporaryOfflineCause class="hudson.node_monitors.DiskSpaceMonitorDescriptor$DiskSpace">
+    <path>/usr/local/jenkins</path>
+    <size>691230208</size>
+    <triggered>true</triggered>
+    <trigger>hudson.node_monitors.DiskSpaceMonitor</trigger>
+  </temporaryOfflineCause>
   <disabledAdministrativeMonitors/>
   <version>1.590</version>
   <numExecutors>4</numExecutors>
@@ -550,6 +556,12 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <userId>swills</userId>
     </slave>
     <slave>
+      <temporaryOfflineCause class="hudson.node_monitors.DiskSpaceMonitorDescriptor$DiskSpace">
+        <path>/jenkins</path>
+        <size>945147904</size>
+        <triggered>true</triggered>
+        <trigger>hudson.node_monitors.DiskSpaceMonitor</trigger>
+      </temporaryOfflineCause>
       <name>scan-ci.FreeBSD.org</name>
       <description></description>
       <remoteFS>/jenkins</remoteFS>
