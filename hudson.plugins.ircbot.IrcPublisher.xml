@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson.plugins.ircbot.IrcPublisher_-DescriptorImpl plugin="ircbot@2.25">
-  <enabled>false</enabled>
+  <enabled>true</enabled>
   <hostname>chat.freenode.net</hostname>
   <port>6667</port>
   <ssl>false</ssl>
