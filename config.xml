@@ -511,6 +511,33 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <string></string>
           </args>
         </description>
+        <user reference="../../../slave[3]/temporaryOfflineCause/user"/>
+      </temporaryOfflineCause>
+      <name>jenkins-pci-84amd64</name>
+      <description></description>
+      <remoteFS>/usr/local/jenkins</remoteFS>
+      <numExecutors>2</numExecutors>
+      <mode>EXCLUSIVE</mode>
+      <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.9">
+        <host>8.8.178.212</host>
+        <port>22</port>
+        <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
+      </launcher>
+      <label>jenkins-pci-84amd64</label>
+      <nodeProperties/>
+      <userId>swills</userId>
+    </slave>
+    <slave>
+      <temporaryOfflineCause class="hudson.slaves.OfflineCause$UserCause">
+        <description>
+          <holder reference="../../../../slave[3]/temporaryOfflineCause/description/holder"/>
+          <key>SlaveComputer.DisconnectedBy</key>
+          <args>
+            <string>rodrigc</string>
+            <string></string>
+          </args>
+        </description>
         <user>
           <fullName>rodrigc</fullName>
           <properties>
@@ -553,33 +580,6 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             </hudson.tasks.Mailer_-UserProperty>
           </properties>
         </user>
-      </temporaryOfflineCause>
-      <name>jenkins-pci-84amd64</name>
-      <description></description>
-      <remoteFS>/usr/local/jenkins</remoteFS>
-      <numExecutors>2</numExecutors>
-      <mode>EXCLUSIVE</mode>
-      <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
-      <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.9">
-        <host>8.8.178.212</host>
-        <port>22</port>
-        <credentialsId>4b2cb162-c8f1-4917-ae3a-d70316dafa20</credentialsId>
-      </launcher>
-      <label>jenkins-pci-84amd64</label>
-      <nodeProperties/>
-      <userId>swills</userId>
-    </slave>
-    <slave>
-      <temporaryOfflineCause class="hudson.slaves.OfflineCause$UserCause">
-        <description>
-          <holder reference="../../../../slave[3]/temporaryOfflineCause/description/holder"/>
-          <key>SlaveComputer.DisconnectedBy</key>
-          <args>
-            <string>rodrigc</string>
-            <string></string>
-          </args>
-        </description>
-        <user reference="../../../slave[4]/temporaryOfflineCause/user"/>
       </temporaryOfflineCause>
       <name>jenkins-pci-headamd64</name>
       <description></description>
@@ -682,7 +682,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <string></string>
           </args>
         </description>
-        <user reference="../../../slave[4]/temporaryOfflineCause/user"/>
+        <user reference="../../../slave[5]/temporaryOfflineCause/user"/>
       </temporaryOfflineCause>
       <name>jenkins-pci-92i386</name>
       <description></description>
@@ -709,7 +709,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <string></string>
           </args>
         </description>
-        <user reference="../../../slave[4]/temporaryOfflineCause/user"/>
+        <user reference="../../../slave[5]/temporaryOfflineCause/user"/>
       </temporaryOfflineCause>
       <name>jenkins-pci-84i386</name>
       <description></description>
@@ -736,7 +736,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <string></string>
           </args>
         </description>
-        <user reference="../../../slave[4]/temporaryOfflineCause/user"/>
+        <user reference="../../../slave[5]/temporaryOfflineCause/user"/>
       </temporaryOfflineCause>
       <name>kyua1.nyi.freebsd.org</name>
       <description></description>
