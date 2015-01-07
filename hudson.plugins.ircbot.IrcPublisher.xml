@@ -23,5 +23,5 @@
   <hudsonLogin></hudsonLogin>
   <useNotice>false</useNotice>
   <charset>UTF-8</charset>
-  <useColors>false</useColors>
+  <useColors>true</useColors>
 </hudson.plugins.ircbot.IrcPublisher_-DescriptorImpl>
