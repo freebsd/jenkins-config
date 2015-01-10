@@ -14,7 +14,7 @@ See results at: &lt;a href=&quot;http://scan.freebsd.org&quot;&gt;http://scan.fr
   <properties/>
   <scm class="org.jenkinsci.plugins.multiplescms.MultiSCM" plugin="multiple-scms@0.3">
     <scms>
-      <hudson.scm.SubversionSCM plugin="subversion@2.4.3">
+      <hudson.scm.SubversionSCM plugin="subversion@2.4.5">
         <locations>
           <hudson.scm.SubversionSCM_-ModuleLocation>
             <remote>svn://svn.freebsd.org/base/head</remote>
@@ -47,7 +47,7 @@ See results at: &lt;a href=&quot;http://scan.freebsd.org&quot;&gt;http://scan.fr
         <ignoreDirPropChanges>false</ignoreDirPropChanges>
         <filterChangelog>false</filterChangelog>
       </hudson.scm.SubversionSCM>
-      <hudson.plugins.git.GitSCM plugin="git@2.2.6">
+      <hudson.plugins.git.GitSCM plugin="git@2.3">
         <configVersion>2</configVersion>
         <userRemoteConfigs>
           <hudson.plugins.git.UserRemoteConfig>
@@ -71,7 +71,7 @@ See results at: &lt;a href=&quot;http://scan.freebsd.org&quot;&gt;http://scan.fr
   </scm>
   <assignedNode>scan-ci</assignedNode>
   <canRoam>false</canRoam>
-  <disabled>false</disabled>
+  <disabled>true</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
