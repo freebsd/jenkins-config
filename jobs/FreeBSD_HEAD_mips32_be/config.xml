@@ -92,8 +92,7 @@ KERNCONF=MALTA</defaultValue>
   <builders>
     <hudson.tasks.Shell>
       <command>#/vm/freebsd-ci/scripts/build/build1.sh
-#/vm/freebsd-ci/scripts/build/build-ufs-image.sh
-echo &quot;Test&quot;
+/vm/freebsd-ci/scripts/build/build-ufs-image.sh
 </command>
     </hudson.tasks.Shell>
   </builders>
