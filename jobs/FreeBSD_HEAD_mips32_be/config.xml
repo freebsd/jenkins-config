@@ -71,7 +71,7 @@ KERNCONF=MALTA</defaultValue>
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>/vm/freebsd-ci/scripts/build/build1.sh
+      <command>#/vm/freebsd-ci/scripts/build/build1.sh
 /vm/freebsd-ci/scripts/build/build-ufs-image.sh
 
 </command>
