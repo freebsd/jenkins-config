@@ -19,6 +19,23 @@
 TARGET_ARCH=mips
 KERNCONF=MALTA</defaultValue>
         </hudson.model.TextParameterDefinition>
+        <hudson.model.TextParameterDefinition>
+          <name>FSTAB</name>
+          <description></description>
+          <defaultValue># Device                Mountpoint      FStype  Options         Dump    Pass#
+/dev/ada0       /            ufs    rw              1       1
+</defaultValue>
+        </hudson.model.TextParameterDefinition>
+        <hudson.model.BooleanParameterDefinition>
+          <name>SKIP_INSTALL_PKG</name>
+          <description></description>
+          <defaultValue>true</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+        <hudson.model.BooleanParameterDefinition>
+          <name>INSTALL_PORTS_TREE</name>
+          <description></description>
+          <defaultValue>true</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
@@ -55,6 +72,8 @@ KERNCONF=MALTA</defaultValue>
   <builders>
     <hudson.tasks.Shell>
       <command>/vm/freebsd-ci/scripts/build/build1.sh
+/vm/freebsd-ci/scripts/build/build-ufs-image.sh
+
 </command>
     </hudson.tasks.Shell>
   </builders>
