@@ -51,9 +51,6 @@ KERNCONF=MALTA</defaultValue>
             <ignoreExternalsOption>true</ignoreExternalsOption>
           </hudson.scm.SubversionSCM_-ModuleLocation>
         </locations>
-        <browser class="hudson.scm.browsers.ViewSVN">
-          <url>http://svnweb.freebsd.org/base/</url>
-        </browser>
         <excludedRegions></excludedRegions>
         <includedRegions></includedRegions>
         <excludedUsers></excludedUsers>
@@ -95,8 +92,8 @@ KERNCONF=MALTA</defaultValue>
   <builders>
     <hudson.tasks.Shell>
       <command>#/vm/freebsd-ci/scripts/build/build1.sh
-/vm/freebsd-ci/scripts/build/build-ufs-image.sh
-
+#/vm/freebsd-ci/scripts/build/build-ufs-image.sh
+echo &quot;Test&quot;
 </command>
     </hudson.tasks.Shell>
   </builders>
