@@ -50,6 +50,7 @@
       <command>(
 cat &lt;&lt;EOF
 # Put make.conf entries here
+MAKEOBJDIRPREFIX=${WORKSPACE}/obj
 EOF
 ) &gt; ${WORKSPACE}/make.conf
 
