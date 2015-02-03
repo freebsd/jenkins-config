@@ -9,7 +9,17 @@
     <artifactNumToKeep>-1</artifactNumToKeep>
   </logRotator>
   <keepDependencies>false</keepDependencies>
-  <properties/>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.TextParameterDefinition>
+          <name>MAKE_CONF_FILE</name>
+          <description></description>
+          <defaultValue>WITH_TESTS=yes</defaultValue>
+        </hudson.model.TextParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
   <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.4.5">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
