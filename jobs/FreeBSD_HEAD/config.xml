@@ -47,24 +47,7 @@
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>(
-cat &lt;&lt;EOF
-# Put make.conf entries here
-MAKEOBJDIRPREFIX=${WORKSPACE}/obj
-EOF
-) &gt; ${WORKSPACE}/make.conf
-
-set +x
-echo &quot;--------------------------------------------------------------&quot;
-echo &quot;&gt;&gt;&gt; ${WORKSPACE}/make.conf contains:&quot;
-set -x
-cat ${WORKSPACE}/make.conf
-set +x
-echo &quot;--------------------------------------------------------------&quot;
-set -x
-
-make -j 4 buildworld __MAKE_CONF=${WORKSPACE}/make.conf
-make -j 4 buildkernel __MAKE_CONF=${WORKSPACE}/make.conf</command>
+      <command>/vm/freebsd-ci/scripts/build/build1.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
