@@ -41,7 +41,7 @@ KERNCONF=MALTA</defaultValue>
   </properties>
   <scm class="org.jenkinsci.plugins.multiplescms.MultiSCM" plugin="multiple-scms@0.3">
     <scms>
-      <hudson.scm.SubversionSCM plugin="subversion@2.4.5">
+      <hudson.scm.SubversionSCM plugin="subversion@2.5">
         <locations>
           <hudson.scm.SubversionSCM_-ModuleLocation>
             <remote>svn://svn.freebsd.org/base/head</remote>
@@ -60,12 +60,26 @@ KERNCONF=MALTA</defaultValue>
         <ignoreDirPropChanges>false</ignoreDirPropChanges>
         <filterChangelog>false</filterChangelog>
       </hudson.scm.SubversionSCM>
-      <hudson.scm.SubversionSCM plugin="subversion@2.4.5">
+      <hudson.scm.SubversionSCM plugin="subversion@2.5">
         <locations>
           <hudson.scm.SubversionSCM_-ModuleLocation>
             <remote>svn://svn.freebsd.org/ports/head</remote>
             <credentialsId></credentialsId>
             <local>usr/ports</local>
+            <depthOption>immediates</depthOption>
+            <ignoreExternalsOption>true</ignoreExternalsOption>
+          </hudson.scm.SubversionSCM_-ModuleLocation>
+          <hudson.scm.SubversionSCM_-ModuleLocation>
+            <remote>svn://svn.freebsd.org/ports/head/Mk</remote>
+            <credentialsId></credentialsId>
+            <local>usr/ports/Mk</local>
+            <depthOption>infinity</depthOption>
+            <ignoreExternalsOption>true</ignoreExternalsOption>
+          </hudson.scm.SubversionSCM_-ModuleLocation>
+          <hudson.scm.SubversionSCM_-ModuleLocation>
+            <remote>svn://svn.freebsd.org/ports/head/devel</remote>
+            <credentialsId></credentialsId>
+            <local>usr/ports/devel.</local>
             <depthOption>infinity</depthOption>
             <ignoreExternalsOption>true</ignoreExternalsOption>
           </hudson.scm.SubversionSCM_-ModuleLocation>
@@ -92,7 +106,7 @@ KERNCONF=MALTA</defaultValue>
   <builders>
     <hudson.tasks.Shell>
       <command>#/vm/freebsd-ci/scripts/build/build1.sh
-/vm/freebsd-ci/scripts/build/build-ufs-image.sh
+#/vm/freebsd-ci/scripts/build/build-ufs-image.sh
 </command>
     </hudson.tasks.Shell>
   </builders>
