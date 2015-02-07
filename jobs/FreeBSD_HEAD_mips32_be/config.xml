@@ -39,7 +39,7 @@ KERNCONF=MALTA</defaultValue>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="org.jenkinsci.plugins.multiplescms.MultiSCM" plugin="multiple-scms@0.3">
+  <scm class="org.jenkinsci.plugins.multiplescms.MultiSCM" plugin="multiple-scms@0.4-beta-2-SNAPSHOT">
     <scms>
       <hudson.scm.SubversionSCM plugin="subversion@2.5">
         <locations>
@@ -105,8 +105,8 @@ KERNCONF=MALTA</defaultValue>
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>#/vm/freebsd-ci/scripts/build/build1.sh
-#/vm/freebsd-ci/scripts/build/build-ufs-image.sh
+      <command>/vm/freebsd-ci/scripts/build/build1.sh
+/vm/freebsd-ci/scripts/build/build-ufs-image.sh
 </command>
     </hudson.tasks.Shell>
   </builders>
