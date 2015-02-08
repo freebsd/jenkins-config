@@ -79,7 +79,7 @@ KERNCONF=MALTA</defaultValue>
           <hudson.scm.SubversionSCM_-ModuleLocation>
             <remote>svn://svn.freebsd.org/ports/head/devel</remote>
             <credentialsId></credentialsId>
-            <local>usr/ports/devel.</local>
+            <local>usr/ports/devel</local>
             <depthOption>infinity</depthOption>
             <ignoreExternalsOption>true</ignoreExternalsOption>
           </hudson.scm.SubversionSCM_-ModuleLocation>
