@@ -114,6 +114,13 @@ KERNCONF=MALTA</defaultValue>
             <depthOption>infinity</depthOption>
             <ignoreExternalsOption>true</ignoreExternalsOption>
           </hudson.scm.SubversionSCM_-ModuleLocation>
+          <hudson.scm.SubversionSCM_-ModuleLocation>
+            <remote>svn://svn.freebsd.org/ports/head/Templates</remote>
+            <credentialsId></credentialsId>
+            <local>usr/ports/Templates</local>
+            <depthOption>infinity</depthOption>
+            <ignoreExternalsOption>true</ignoreExternalsOption>
+          </hudson.scm.SubversionSCM_-ModuleLocation>
         </locations>
         <excludedRegions></excludedRegions>
         <includedRegions></includedRegions>
