@@ -36,6 +36,11 @@ KERNCONF=MALTA</defaultValue>
           <description></description>
           <defaultValue>true</defaultValue>
         </hudson.model.BooleanParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>ENDIAN</name>
+          <description></description>
+          <defaultValue>big</defaultValue>
+        </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
