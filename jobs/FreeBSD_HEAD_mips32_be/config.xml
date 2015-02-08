@@ -105,7 +105,7 @@ KERNCONF=MALTA</defaultValue>
           <hudson.scm.SubversionSCM_-ModuleLocation>
             <remote>svn://svn.freebsd.org/ports/head/databases</remote>
             <credentialsId></credentialsId>
-            <local>.</local>
+            <local>usr/ports/databases</local>
             <depthOption>infinity</depthOption>
             <ignoreExternalsOption>true</ignoreExternalsOption>
           </hudson.scm.SubversionSCM_-ModuleLocation>
