@@ -697,7 +697,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <string></string>
           </args>
         </description>
-        <user reference="../../../slave[3]/temporaryOfflineCause/user"/>
+        <user reference="../../../slave[4]/temporaryOfflineCause/user"/>
       </temporaryOfflineCause>
       <name>jenkins-pci-84i386</name>
       <description></description>
