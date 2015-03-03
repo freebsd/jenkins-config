@@ -18,6 +18,11 @@
           <defaultValue>NO_WERROR=yes
 </defaultValue>
         </hudson.model.TextParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>TARGET_ARCH</name>
+          <description></description>
+          <defaultValue>amd64</defaultValue>
+        </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
