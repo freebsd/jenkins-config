@@ -63,7 +63,8 @@
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>/vm/freebsd-ci/scripts/build/cross-build.sh</command>
+      <command>sudo pkg install -y devel/${TARGET_ARCH}-toolchain-gcc
+/vm/freebsd-ci/scripts/build/cross-build.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
