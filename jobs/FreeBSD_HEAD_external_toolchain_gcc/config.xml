@@ -32,7 +32,7 @@
     <ignoreDirPropChanges>false</ignoreDirPropChanges>
     <filterChangelog>false</filterChangelog>
   </scm>
-  <assignedNode>jenkins-10.freebsd.org</assignedNode>
+  <assignedNode>jenkins10a.freebsd.org</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
@@ -47,23 +47,14 @@
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>/vm/freebsd-ci/scripts/build/build1.sh</command>
+      <command>/vm/freebsd-ci/scripts/build/cross-build.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>FreeBSD_HEAD-modules</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-        <completeBuild>true</completeBuild>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
     <hudson.tasks.Mailer plugin="mailer@1.11">
-      <recipients>jenkins-admin@FreeBSD.org freebsd-current@freebsd.org</recipients>
-      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
-      <sendToIndividuals>true</sendToIndividuals>
+      <recipients>rodrigc@FreeBSD.org</recipients>
+      <dontNotifyEveryUnstableBuild>true</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
     </hudson.tasks.Mailer>
     <hudson.plugins.ircbot.IrcPublisher plugin="ircbot@2.25">
       <targets>
@@ -80,6 +71,7 @@
       <notifyUpstreamCommitters>false</notifyUpstreamCommitters>
       <buildToChatNotifier class="hudson.plugins.im.build_notify.SummaryOnlyBuildToChatNotifier" plugin="instant-messaging@1.30"/>
       <matrixMultiplier>ONLY_CONFIGURATIONS</matrixMultiplier>
+      <channels/>
     </hudson.plugins.ircbot.IrcPublisher>
   </publishers>
   <buildWrappers/>
