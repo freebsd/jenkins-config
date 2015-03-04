@@ -16,6 +16,7 @@
           <name>MAKE_CONF_FILE</name>
           <description></description>
           <defaultValue>NO_WERROR=yes
+CXXFLAGS+= -D_LIBCPP_HAS_NO_ADVANCED_SFINAE
 </defaultValue>
         </hudson.model.TextParameterDefinition>
         <hudson.model.StringParameterDefinition>
