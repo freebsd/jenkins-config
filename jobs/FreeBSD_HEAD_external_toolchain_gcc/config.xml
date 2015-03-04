@@ -54,12 +54,7 @@ CXXFLAGS+= -D_LIBCPP_HAS_NO_ADVANCED_SFINAE
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers>
-    <hudson.triggers.SCMTrigger>
-      <spec>H */3 * * *</spec>
-      <ignorePostCommitHooks>false</ignorePostCommitHooks>
-    </hudson.triggers.SCMTrigger>
-  </triggers>
+  <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
