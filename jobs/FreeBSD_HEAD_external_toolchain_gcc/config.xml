@@ -79,7 +79,7 @@ Index: lib/libnv/tests/dnv_tests.cc
         nvlist_destroy(nvl);
 EOF
 ) &gt; $WORKSPACE/patches/patch1.txt
-
+ls -l lib/libnv/tests/dnv_tests.cc
 svn patch $WORKSPACE/patches/patch1.txt</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
