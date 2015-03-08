@@ -60,6 +60,7 @@ CXXFLAGS+= -D_LIBCPP_HAS_NO_ADVANCED_SFINAE
   <builders>
     <hudson.tasks.Shell>
       <command>svn revert lib/libnv/tests/dnv_tests.cc
+svn up lib/libnv/tests/dnv_tests.cc
 
 mkdir -p $WORKSPACE/patches
 (
@@ -83,7 +84,7 @@ ls -l lib/libnv/tests/dnv_tests.cc
 svn patch $WORKSPACE/patches/patch1.txt</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>/vm/freebsd-ci/scripts/build/cross-build.sh</command>
+      <command>#/vm/freebsd-ci/scripts/build/cross-build.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
