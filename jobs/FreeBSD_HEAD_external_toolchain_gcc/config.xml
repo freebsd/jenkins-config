@@ -105,7 +105,7 @@ EOF
 
 patch &lt; patch1.txt
 
-#/vm/freebsd-ci/scripts/build/cross-build.sh</command>
+/vm/freebsd-ci/scripts/build/cross-build.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
