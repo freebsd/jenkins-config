@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<hudson.tasks.Mailer_-DescriptorImpl plugin="mailer@1.11">
+<hudson.tasks.Mailer_-DescriptorImpl plugin="mailer@1.15">
   <defaultSuffix>@FreeBSD.org</defaultSuffix>
   <hudsonUrl>http://localhost:8180/jenkins/</hudsonUrl>
   <useSsl>false</useSsl>

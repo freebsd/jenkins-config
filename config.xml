@@ -360,12 +360,13 @@
     <permission>hudson.scm.SCM.Tag:swills</permission>
     <permission>hudson.scm.SCM.Tag:tyler</permission>
   </authorizationStrategy>
-  <securityRealm class="hudson.security.LDAPSecurityRealm" plugin="ldap@1.6">
+  <securityRealm class="hudson.security.LDAPSecurityRealm" plugin="ldap@1.11">
     <server>ldaps://ldap1.ysv.freebsd.org</server>
     <rootDN>dc=freebsd,dc=org</rootDN>
     <inhibitInferRootDN>false</inhibitInferRootDN>
     <userSearchBase>ou=users</userSearchBase>
     <userSearch>uid={0}</userSearch>
+    <groupMembershipStrategy class="jenkins.security.plugins.ldap.FromGroupSearchLDAPGroupMembershipStrategy"/>
     <disableMailAddressResolver>false</disableMailAddressResolver>
   </securityRealm>
   <disableRememberMe>false</disableRememberMe>
@@ -375,7 +376,7 @@
   <systemMessage>&lt;img src=&quot;https://people.freebsd.org/~lwhsu/FreeBSD_logo.png&quot; /&gt;&lt;br /&gt;&lt;br /&gt;&#xd;
 This is build and test server for &lt;a href=&quot;http://www.freebsd.org&quot;&gt;The FreeBSD Project&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;&#xd;
 See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki page&lt;/a&gt; for more information.&lt;br /&gt;</systemMessage>
-  <markupFormatter class="hudson.markup.RawHtmlMarkupFormatter" plugin="antisamy-markup-formatter@1.1">
+  <markupFormatter class="hudson.markup.RawHtmlMarkupFormatter" plugin="antisamy-markup-formatter@1.3">
     <disableSyntaxHighlighting>false</disableSyntaxHighlighting>
   </markupFormatter>
   <jdks/>
@@ -473,7 +474,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
               <timestamp>1397118522866</timestamp>
             </jenkins.security.LastGrantedAuthoritiesProperty>
             <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.26"/>
-            <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.11">
+            <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.15">
               <emailAddress>rodrigc@FreeBSD.org</emailAddress>
             </hudson.tasks.Mailer_-UserProperty>
           </properties>
@@ -541,7 +542,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
               <timestamp>1397118522866</timestamp>
             </jenkins.security.LastGrantedAuthoritiesProperty>
             <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.26"/>
-            <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.11">
+            <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.15">
               <emailAddress>rodrigc@FreeBSD.org</emailAddress>
             </hudson.tasks.Mailer_-UserProperty>
           </properties>
@@ -760,7 +761,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
               <timestamp>1397118522866</timestamp>
             </jenkins.security.LastGrantedAuthoritiesProperty>
             <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.26"/>
-            <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.11">
+            <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.15">
               <emailAddress>rodrigc@FreeBSD.org</emailAddress>
             </hudson.tasks.Mailer_-UserProperty>
           </properties>
