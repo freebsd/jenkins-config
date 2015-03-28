@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<hudson.plugins.ircbot.IrcPublisher_-DescriptorImpl plugin="ircbot@2.25">
+<hudson.plugins.ircbot.IrcPublisher_-DescriptorImpl plugin="ircbot@2.26">
   <enabled>true</enabled>
   <hostname>chat.freenode.net</hostname>
   <port>6667</port>
@@ -12,9 +12,10 @@
   <nickServPassword></nickServPassword>
   <socksHost></socksHost>
   <socksPort>1080</socksPort>
+  <messageRate>500</messageRate>
   <scrambledPasswords>true</scrambledPasswords>
   <defaultTargets>
-    <hudson.plugins.im.GroupChatIMMessageTarget plugin="instant-messaging@1.30">
+    <hudson.plugins.im.GroupChatIMMessageTarget plugin="instant-messaging@1.34">
       <name>#freebsd-commits</name>
       <notificationOnly>true</notificationOnly>
     </hudson.plugins.im.GroupChatIMMessageTarget>

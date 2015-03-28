@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson>
   <disabledAdministrativeMonitors/>
-  <version>1.596</version>
+  <version>1.606</version>
   <numExecutors>4</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
@@ -360,13 +360,12 @@
     <permission>hudson.scm.SCM.Tag:swills</permission>
     <permission>hudson.scm.SCM.Tag:tyler</permission>
   </authorizationStrategy>
-  <securityRealm class="hudson.security.LDAPSecurityRealm" plugin="ldap@1.11">
+  <securityRealm class="hudson.security.LDAPSecurityRealm" plugin="ldap@1.6">
     <server>ldaps://ldap1.ysv.freebsd.org</server>
     <rootDN>dc=freebsd,dc=org</rootDN>
     <inhibitInferRootDN>false</inhibitInferRootDN>
     <userSearchBase>ou=users</userSearchBase>
     <userSearch>uid={0}</userSearch>
-    <groupMembershipStrategy class="jenkins.security.plugins.ldap.FromGroupSearchLDAPGroupMembershipStrategy"/>
     <disableMailAddressResolver>false</disableMailAddressResolver>
   </securityRealm>
   <disableRememberMe>false</disableRememberMe>
@@ -376,7 +375,7 @@
   <systemMessage>&lt;img src=&quot;https://people.freebsd.org/~lwhsu/FreeBSD_logo.png&quot; /&gt;&lt;br /&gt;&lt;br /&gt;&#xd;
 This is build and test server for &lt;a href=&quot;http://www.freebsd.org&quot;&gt;The FreeBSD Project&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;&#xd;
 See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki page&lt;/a&gt; for more information.&lt;br /&gt;</systemMessage>
-  <markupFormatter class="hudson.markup.RawHtmlMarkupFormatter" plugin="antisamy-markup-formatter@1.2">
+  <markupFormatter class="hudson.markup.RawHtmlMarkupFormatter" plugin="antisamy-markup-formatter@1.1">
     <disableSyntaxHighlighting>false</disableSyntaxHighlighting>
   </markupFormatter>
   <jdks/>
@@ -446,7 +445,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <jenkins.security.ApiTokenProperty>
               <apiToken>smdgEPsUNzICUguWzj+jfYm85cWzcuUtKor1Xtl97SCMT4TNXfzS427rbmWoMKMF</apiToken>
             </jenkins.security.ApiTokenProperty>
-            <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.18">
+            <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.22">
               <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
             </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
             <hudson.model.MyViewsProperty>
@@ -473,7 +472,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
               </roles>
               <timestamp>1397118522866</timestamp>
             </jenkins.security.LastGrantedAuthoritiesProperty>
-            <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
+            <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.26"/>
             <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.11">
               <emailAddress>rodrigc@FreeBSD.org</emailAddress>
             </hudson.tasks.Mailer_-UserProperty>
@@ -514,7 +513,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <jenkins.security.ApiTokenProperty>
               <apiToken>smdgEPsUNzICUguWzj+jfYm85cWzcuUtKor1Xtl97SCMT4TNXfzS427rbmWoMKMF</apiToken>
             </jenkins.security.ApiTokenProperty>
-            <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.18">
+            <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.22">
               <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
             </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
             <hudson.model.MyViewsProperty>
@@ -541,7 +540,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
               </roles>
               <timestamp>1397118522866</timestamp>
             </jenkins.security.LastGrantedAuthoritiesProperty>
-            <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
+            <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.26"/>
             <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.11">
               <emailAddress>rodrigc@FreeBSD.org</emailAddress>
             </hudson.tasks.Mailer_-UserProperty>
@@ -733,7 +732,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
             <jenkins.security.ApiTokenProperty>
               <apiToken>smdgEPsUNzICUguWzj+jfYm85cWzcuUtKor1Xtl97SCMT4TNXfzS427rbmWoMKMF</apiToken>
             </jenkins.security.ApiTokenProperty>
-            <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.18">
+            <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.22">
               <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
             </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
             <hudson.model.MyViewsProperty>
@@ -760,7 +759,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
               </roles>
               <timestamp>1397118522866</timestamp>
             </jenkins.security.LastGrantedAuthoritiesProperty>
-            <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
+            <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.26"/>
             <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.11">
               <emailAddress>rodrigc@FreeBSD.org</emailAddress>
             </hudson.tasks.Mailer_-UserProperty>
@@ -830,7 +829,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <filterQueue>false</filterQueue>
       <properties class="hudson.model.View$PropertyList"/>
     </hudson.model.AllView>
-    <au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView plugin="build-pipeline-plugin@1.4.3">
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView plugin="build-pipeline-plugin@1.4.7">
       <owner class="hudson" reference="../../.."/>
       <name>FreeBSD_ports_ci_head</name>
       <filterExecutors>false</filterExecutors>
@@ -838,6 +837,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <properties class="hudson.model.View$PropertyList"/>
       <gridBuilder class="au.com.centrumsystems.hudson.plugin.buildpipeline.DownstreamProjectGridBuilder">
         <firstJob>FreeBSD_ports_ci_head_master</firstJob>
+        <firstJobLink>job/FreeBSD_ports_ci_head_master/</firstJobLink>
       </gridBuilder>
       <noOfDisplayedBuilds>1</noOfDisplayedBuilds>
       <buildViewTitle></buildViewTitle>
