@@ -61,24 +61,6 @@ CXXFLAGS+= -D_LIBCPP_HAS_NO_ADVANCED_SFINAE
     <hudson.tasks.Shell>
       <command>svn revert -R contrib/llvm contrib/libc++
 
-(
-cat &lt;&lt;EOF
-Index: contrib/llvm/tools/lldb/source/Core/Mangled.cpp
-===================================================================
---- contrib/llvm/tools/lldb/source/Core/Mangled.cpp     (revision 280762)
-+++ contrib/llvm/tools/lldb/source/Core/Mangled.cpp     (working copy)
-@@ -4886,7 +4886,7 @@
-
- struct Db
- {
--    typedef String String;
-+    typedef ::String String;
-     typedef Vector&lt;string_pair&gt; sub_type;
-     typedef Vector&lt;sub_type&gt; template_param_type;
-     Vector&lt;string_pair&gt; names;
-
-EOF
-) &gt; patch1.txt
 
 (
 cat &lt;&lt;EOF
@@ -119,10 +101,9 @@ Index: contrib/libc++/include/type_traits
                    || is_volatile&lt;typename remove_reference&lt;_T2&gt;::type&gt;::value)
 
 EOF
-) &gt; patch2.txt
+) &gt; patch1.txt
 
 patch &lt; patch1.txt
-patch &lt; patch2.txt
 
 #/vm/freebsd-ci/scripts/build/cross-build.sh</command>
     </hudson.tasks.Shell>
