@@ -10,11 +10,10 @@
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.4.5">
+  <scm class="hudson.scm.SubversionSCM" plugin="subversion@1.54">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
         <remote>http://svn0.us-west.freebsd.org/ports/head@$SVN_REVISION</remote>
-        <credentialsId></credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
         <ignoreExternalsOption>false</ignoreExternalsOption>

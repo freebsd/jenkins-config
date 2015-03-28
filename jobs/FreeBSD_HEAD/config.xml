@@ -10,11 +10,10 @@
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.4.5">
+  <scm class="hudson.scm.SubversionSCM" plugin="subversion@1.54">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
         <remote>svn://svn.freebsd.org/base/head</remote>
-        <credentialsId></credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
         <ignoreExternalsOption>false</ignoreExternalsOption>
@@ -80,7 +79,6 @@
       <notifyUpstreamCommitters>false</notifyUpstreamCommitters>
       <buildToChatNotifier class="hudson.plugins.im.build_notify.SummaryOnlyBuildToChatNotifier" plugin="instant-messaging@1.30"/>
       <matrixMultiplier>ONLY_CONFIGURATIONS</matrixMultiplier>
-      <channels/>
     </hudson.plugins.ircbot.IrcPublisher>
   </publishers>
   <buildWrappers/>

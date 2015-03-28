@@ -22,11 +22,10 @@ KERNCONF=MALTA</defaultValue>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.4.5">
+  <scm class="hudson.scm.SubversionSCM" plugin="subversion@1.54">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
         <remote>svn://svn.freebsd.org/base/head</remote>
-        <credentialsId></credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
         <ignoreExternalsOption>false</ignoreExternalsOption>

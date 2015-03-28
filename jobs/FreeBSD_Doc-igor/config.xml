@@ -4,11 +4,10 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.4.3">
+  <scm class="hudson.scm.SubversionSCM" plugin="subversion@1.54">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
         <remote>svn://svn.freebsd.org/doc/head</remote>
-        <credentialsId></credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
         <ignoreExternalsOption>true</ignoreExternalsOption>
@@ -64,7 +63,7 @@ FOOTER</command>
       <canRunOnFailed>false</canRunOnFailed>
       <useStableBuildAsReference>false</useStableBuildAsReference>
       <useDeltaValues>false</useDeltaValues>
-      <thresholds plugin="analysis-core@1.62">
+      <thresholds plugin="analysis-core@1.65">
         <unstableTotalAll></unstableTotalAll>
         <unstableTotalHigh></unstableTotalHigh>
         <unstableTotalNormal></unstableTotalNormal>

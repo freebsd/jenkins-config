@@ -12,27 +12,24 @@ See results at: &lt;a href=&quot;http://scan.freebsd.org&quot;&gt;http://scan.fr
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <scm class="org.jenkinsci.plugins.multiplescms.MultiSCM" plugin="multiple-scms@0.3">
+  <scm class="org.jenkinsci.plugins.multiplescms.MultiSCM" plugin="multiple-scms@0.4">
     <scms>
-      <hudson.scm.SubversionSCM plugin="subversion@2.4.5">
+      <hudson.scm.SubversionSCM plugin="subversion@1.54">
         <locations>
           <hudson.scm.SubversionSCM_-ModuleLocation>
             <remote>svn://svn.freebsd.org/base/head</remote>
-            <credentialsId></credentialsId>
             <local>src</local>
             <depthOption>infinity</depthOption>
             <ignoreExternalsOption>false</ignoreExternalsOption>
           </hudson.scm.SubversionSCM_-ModuleLocation>
           <hudson.scm.SubversionSCM_-ModuleLocation>
             <remote>http://llvm.org/svn/llvm-project/llvm/trunk</remote>
-            <credentialsId></credentialsId>
             <local>llvm</local>
             <depthOption>infinity</depthOption>
             <ignoreExternalsOption>false</ignoreExternalsOption>
           </hudson.scm.SubversionSCM_-ModuleLocation>
           <hudson.scm.SubversionSCM_-ModuleLocation>
             <remote>http://llvm.org/svn/llvm-project/cfe/trunk</remote>
-            <credentialsId></credentialsId>
             <local>llvm/tools/clang</local>
             <depthOption>infinity</depthOption>
             <ignoreExternalsOption>false</ignoreExternalsOption>
