@@ -3,12 +3,14 @@
   <fullName>cy</fullName>
   <properties>
     <hudson.model.PaneStatusProperties>
-      <collapsed/>
+      <collapsed>
+        <string>buildQueue</string>
+      </collapsed>
     </hudson.model.PaneStatusProperties>
     <jenkins.security.ApiTokenProperty>
       <apiToken>QHHiQdk3abmaEjF/L0DhUCthrZNDi13Z8OfRYYAB12qMT4TNXfzS427rbmWoMKMF</apiToken>
     </jenkins.security.ApiTokenProperty>
-    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.10">
+    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.22">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
     </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
     <hudson.model.MyViewsProperty>
@@ -25,10 +27,10 @@
     <hudson.search.UserSearchProperty>
       <insensitiveSearch>false</insensitiveSearch>
     </hudson.search.UserSearchProperty>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.8">
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.15">
       <emailAddress>cy@FreeBSD.org</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
-    <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
+    <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.26"/>
     <jenkins.security.LastGrantedAuthoritiesProperty>
       <roles>
         <string>cy</string>
