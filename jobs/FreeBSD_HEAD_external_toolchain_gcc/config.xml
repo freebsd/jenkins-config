@@ -59,9 +59,7 @@ WITHOUT_BOOT=yes</defaultValue>
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>) &gt; patch1.txt
-
-/vm/freebsd-ci/scripts/build/cross-build.sh</command>
+      <command>/vm/freebsd-ci/scripts/build/cross-build.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
