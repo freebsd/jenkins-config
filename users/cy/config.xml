@@ -3,9 +3,7 @@
   <fullName>cy</fullName>
   <properties>
     <hudson.model.PaneStatusProperties>
-      <collapsed>
-        <string>buildQueue</string>
-      </collapsed>
+      <collapsed/>
     </hudson.model.PaneStatusProperties>
     <jenkins.security.ApiTokenProperty>
       <apiToken>QHHiQdk3abmaEjF/L0DhUCthrZNDi13Z8OfRYYAB12qMT4TNXfzS427rbmWoMKMF</apiToken>
