@@ -59,51 +59,7 @@ WITHOUT_BOOT=yes</defaultValue>
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>svn revert -R contrib/llvm contrib/libc++
-
-
-(
-cat &lt;&lt;EOF
-Index: contrib/libc++/include/type_traits
-===================================================================
---- contrib/libc++/include/type_traits	(revision 280762)
-+++ contrib/libc++/include/type_traits	(working copy)
-@@ -842,7 +842,16 @@
- 
- namespace __is_convertible_imp
- {
--template &lt;class _Tp&gt; char  __test(_Tp);
-+template &lt;class _Tp&gt; void  __test_convert(_Tp);
-+
-+template &lt;class _From, class _To, class = void&gt;
-+struct __is_convertible_test : public false_type {};
-+
-+template &lt;class _From, class _To&gt;
-+struct __is_convertible_test&lt;_From, _To,
-+    decltype(__test_convert&lt;_To&gt;(_VSTD::declval&lt;_From&gt;()))&gt; : public true_type
-+{};
-+
- template &lt;class _Tp&gt; __two __test(...);
- #ifndef _LIBCPP_HAS_NO_RVALUE_REFERENCES
- template &lt;class _Tp&gt; _Tp&amp;&amp; __source();
-@@ -877,10 +886,8 @@
-     unsigned _T2_is_array_function_or_void = __is_convertible_imp::__is_array_function_or_void&lt;_T2&gt;::value&gt;
- struct __is_convertible
-     : public integral_constant&lt;bool,
--#ifndef _LIBCPP_HAS_NO_RVALUE_REFERENCES
--        sizeof(__is_convertible_imp::__test&lt;_T2&gt;(__is_convertible_imp::__source&lt;_T1&gt;())) == 1
--#else
--        sizeof(__is_convertible_imp::__test&lt;_T2&gt;(__is_convertible_imp::__source&lt;_T1&gt;())) == 1
-+        __is_convertible_imp::__is_convertible_test&lt;_T1, _T2&gt;::value
-+#if defined(_LIBCPP_HAS_NO_RVALUE_REFERENCES)
-          &amp;&amp; !(!is_function&lt;_T1&gt;::value &amp;&amp; !is_reference&lt;_T1&gt;::value &amp;&amp; is_reference&lt;_T2&gt;::value
-               &amp;&amp; (!is_const&lt;typename remove_reference&lt;_T2&gt;::type&gt;::value
-                   || is_volatile&lt;typename remove_reference&lt;_T2&gt;::type&gt;::value)
-
-EOF
-) &gt; patch1.txt
-
-patch &lt; patch1.txt
+      <command>) &gt; patch1.txt
 
 /vm/freebsd-ci/scripts/build/cross-build.sh</command>
     </hudson.tasks.Shell>
