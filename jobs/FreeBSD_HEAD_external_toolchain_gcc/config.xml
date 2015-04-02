@@ -71,7 +71,7 @@ Index: sys/crypto/aesni/aesencdec.h
   */
  
 +#ifdef _KERNEL
-+/* Suppress inclusion of gcc&apos;s mm_malloc.h header */
++/* Suppress inclusion of gcc\&apos;s mm_malloc.h header */
 +#define _MM_MALLOC_H_INCLUDED 1
 +#endif
 +
@@ -87,7 +87,7 @@ Index: sys/crypto/aesni/aesni_ghash.c
  #endif
  
 +#ifdef _KERNEL
-+/* Suppress inclusion of gcc&apos;s mm_malloc.h header */
++/* Suppress inclusion of gcc\&apos;s mm_malloc.h header */
 +#define _MM_MALLOC_H_INCLUDED 1
 +#endif
 +
@@ -103,13 +103,14 @@ Index: sys/crypto/aesni/aesni_wrap.c
  
  #include &quot;aesencdec.h&quot;
 +#ifdef _KERNEL
-+/* Suppress inclusion of gcc&apos;s mm_malloc.h header */
++/* Suppress inclusion of gcc\&apos;s mm_malloc.h header */
 +#define _MM_MALLOC_H_INCLUDED 1
 +#endif
 +
  #include &lt;smmintrin.h&gt;
  
  MALLOC_DECLARE(M_AESNI);
+ 
 EOF
 ) &gt; ${WORKSPACE}/patch1.txt
 
