@@ -30,7 +30,12 @@
     </hudson.tasks.Mailer_-UserProperty>
     <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.26"/>
     <jenkins.security.LastGrantedAuthoritiesProperty>
-      <timestamp>0</timestamp>
+      <roles>
+        <string>xmj</string>
+        <string>ROLE_XMJ</string>
+        <string>authenticated</string>
+      </roles>
+      <timestamp>1427981635350</timestamp>
     </jenkins.security.LastGrantedAuthoritiesProperty>
   </properties>
 </user>
