@@ -60,7 +60,95 @@ WITHOUT_RESCUE=yes</defaultValue>
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>/vm/freebsd-ci/scripts/build/cross-build.sh</command>
+      <command>(
+cat &lt;&lt;EOF
+Index: sys/crypto/aesni/aesencdec.h
+===================================================================
+--- sys/crypto/aesni/aesencdec.h	(revision 280912)
++++ sys/crypto/aesni/aesencdec.h	(working copy)
+@@ -27,6 +27,11 @@
+  *
+  */
+ 
++#ifdef _KERNEL
++/* Suppress inclusion of gcc&apos;s mm_malloc.h header */
++#define _MM_MALLOC_H_INCLUDED 1
++#endif
++
+ #include &lt;wmmintrin.h&gt;
+ 
+ static inline void
+Index: sys/crypto/aesni/aesni_ghash.c
+===================================================================
+--- sys/crypto/aesni/aesni_ghash.c	(revision 280912)
++++ sys/crypto/aesni/aesni_ghash.c	(working copy)
+@@ -71,6 +71,11 @@
+ #include &lt;stdint.h&gt;
+ #endif
+ 
++#ifdef _KERNEL
++/* Suppress inclusion of gcc&apos;s mm_malloc.h header */
++#define _MM_MALLOC_H_INCLUDED 1
++#endif
++
+ #include &lt;wmmintrin.h&gt;
+ #include &lt;emmintrin.h&gt;
+ #include &lt;smmintrin.h&gt;
+Index: sys/crypto/aesni/aesni_wrap.c
+===================================================================
+--- sys/crypto/aesni/aesni_wrap.c	(revision 280912)
++++ sys/crypto/aesni/aesni_wrap.c	(working copy)
+@@ -45,6 +45,11 @@
+ #include &lt;opencrypto/gmac.h&gt;
+ 
+ #include &quot;aesencdec.h&quot;
++#ifdef _KERNEL
++/* Suppress inclusion of gcc&apos;s mm_malloc.h header */
++#define _MM_MALLOC_H_INCLUDED 1
++#endif
++
+ #include &lt;smmintrin.h&gt;
+ 
+ MALLOC_DECLARE(M_AESNI);
+EOF
+) &gt; ${WORKSPACE}/patch1.txt
+
+(
+cat &lt;&lt;EOF
+Index: Makefile.inc1
+===================================================================
+--- Makefile.inc1	(revision 280979)
++++ Makefile.inc1	(working copy)
+@@ -1457,12 +1457,9 @@
+ # we get done with the earlier stages. It is the last set of tools needed
+ # to begin building the target binaries.
+ #
+-.if ${TARGET_ARCH} != ${MACHINE_ARCH}
+ .if ${TARGET_ARCH} == &quot;amd64&quot; || ${TARGET_ARCH} == &quot;i386&quot;
+ _btxld=		usr.sbin/btxld
+ .endif
+-.endif
+-.if ${TARGET_ARCH} != ${MACHINE_ARCH}
+ .if ${MK_RESCUE} != &quot;no&quot; || defined(RELEASEDIR)
+ _crunchide=	usr.sbin/crunch/crunchide
+ .endif
+@@ -1469,7 +1466,6 @@
+ .if ${TARGET_ARCH} == &quot;i386&quot; &amp;&amp; defined(RELEASEDIR)
+ _kgzip=		usr.sbin/kgzip
+ .endif
+-.endif
+ 
+ # If we&apos;re given an XAS, don&apos;t build binutils.
+ .if ${XAS:M/*} == &quot;&quot;
+EOF
+) &gt; ${WORKSPACE}/patch2.txt
+
+svn revert crypto/aesni
+svn revert Makefile.inc
+patch -f &lt; ${WORKSPACE}/patch1.txt
+patch -f &lt; ${WORKSPACE}/patch2.txt
+
+#/vm/freebsd-ci/scripts/build/cross-build.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
