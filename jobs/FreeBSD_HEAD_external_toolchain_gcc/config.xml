@@ -149,7 +149,7 @@ svn revert Makefile.inc1
 patch -f &lt; ${WORKSPACE}/patch1.txt
 patch -f &lt; ${WORKSPACE}/patch2.txt
 
-#/vm/freebsd-ci/scripts/build/cross-build.sh</command>
+/vm/freebsd-ci/scripts/build/cross-build.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
