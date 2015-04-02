@@ -18,7 +18,7 @@
           <defaultValue>NO_WERROR=yes
 WERROR=
 WITHOUT_BOOT=yes
-WITHOUT_RESCUE=yes</defaultValue>
+</defaultValue>
         </hudson.model.TextParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>TARGET_ARCH</name>
