@@ -120,7 +120,7 @@ Index: Makefile.inc1
 ===================================================================
 --- Makefile.inc1	(revision 280979)
 +++ Makefile.inc1	(working copy)
-@@ -1457,12 +1457,9 @@
+@@ -1459,12 +1459,9 @@
  # we get done with the earlier stages. It is the last set of tools needed
  # to begin building the target binaries.
  #
@@ -133,7 +133,7 @@ Index: Makefile.inc1
  .if \${MK_RESCUE} != &quot;no&quot; || defined(RELEASEDIR)
  _crunchide=	usr.sbin/crunch/crunchide
  .endif
-@@ -1469,7 +1466,6 @@
+@@ -1471,7 +1468,6 @@
  .if \${TARGET_ARCH} == &quot;i386&quot; &amp;&amp; defined(RELEASEDIR)
  _kgzip=		usr.sbin/kgzip
  .endif
