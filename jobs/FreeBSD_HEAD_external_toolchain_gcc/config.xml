@@ -145,7 +145,7 @@ EOF
 ) &gt; ${WORKSPACE}/patch2.txt
 
 svn revert -R sys/crypto/aesni
-svn revert Makefile.inc
+svn revert Makefile.inc1
 patch -f &lt; ${WORKSPACE}/patch1.txt
 patch -f &lt; ${WORKSPACE}/patch2.txt
 
