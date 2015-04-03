@@ -114,40 +114,40 @@ Index: sys/crypto/aesni/aesni_wrap.c
 EOF
 ) &gt; ${WORKSPACE}/patch1.txt
 
-(
-cat &lt;&lt;EOF
-Index: Makefile.inc1
-===================================================================
---- Makefile.inc1	(revision 280979)
-+++ Makefile.inc1	(working copy)
-@@ -1459,12 +1459,9 @@
- # we get done with the earlier stages. It is the last set of tools needed
- # to begin building the target binaries.
- #
--.if \${TARGET_ARCH} != \${MACHINE_ARCH}
- .if \${TARGET_ARCH} == &quot;amd64&quot; || \${TARGET_ARCH} == &quot;i386&quot;
- _btxld=		usr.sbin/btxld
- .endif
--.endif
--.if \${TARGET_ARCH} != \${MACHINE_ARCH}
- .if \${MK_RESCUE} != &quot;no&quot; || defined(RELEASEDIR)
- _crunchide=	usr.sbin/crunch/crunchide
- .endif
-@@ -1471,7 +1468,6 @@
- .if \${TARGET_ARCH} == &quot;i386&quot; &amp;&amp; defined(RELEASEDIR)
- _kgzip=		usr.sbin/kgzip
- .endif
--.endif
- 
- # If we&apos;re given an XAS, don&apos;t build binutils.
- .if \${XAS:M/*} == &quot;&quot;
-EOF
-) &gt; ${WORKSPACE}/patch2.txt
+#(
+#cat &lt;&lt;EOF
+#Index: Makefile.inc1
+#===================================================================
+#--- Makefile.inc1	(revision 280979)
+#+++ Makefile.inc1	(working copy)
+#@@ -1459,12 +1459,9 @@
+# # we get done with the earlier stages. It is the last set of tools needed
+# # to begin building the target binaries.
+# #
+#-.if \${TARGET_ARCH} != \${MACHINE_ARCH}
+# .if \${TARGET_ARCH} == &quot;amd64&quot; || \${TARGET_ARCH} == &quot;i386&quot;
+# _btxld=		usr.sbin/btxld
+# .endif
+#-.endif
+#-.if \${TARGET_ARCH} != \${MACHINE_ARCH}
+# .if \${MK_RESCUE} != &quot;no&quot; || defined(RELEASEDIR)
+# _crunchide=	usr.sbin/crunch/crunchide
+# .endif
+#@@ -1471,7 +1468,6 @@
+# .if \${TARGET_ARCH} == &quot;i386&quot; &amp;&amp; defined(RELEASEDIR)
+# _kgzip=		usr.sbin/kgzip
+# .endif
+#-.endif
+# 
+# # If we&apos;re given an XAS, don&apos;t build binutils.
+# .if \${XAS:M/*} == &quot;&quot;
+#EOF
+#) &gt; ${WORKSPACE}/patch2.txt
 
 svn revert -R sys/crypto/aesni
 svn revert Makefile.inc1
 patch -f &lt; ${WORKSPACE}/patch1.txt
-patch -f &lt; ${WORKSPACE}/patch2.txt
+#patch -f &lt; ${WORKSPACE}/patch2.txt
 
 /vm/freebsd-ci/scripts/build/cross-build.sh</command>
     </hudson.tasks.Shell>
