@@ -1,6 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <flow-definition plugin="workflow-job@1.5">
+  <actions/>
+  <description></description>
   <keepDependencies>false</keepDependencies>
   <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@1.5">
+    <script>node(&apos;jenkins-10.freebsd.org&apos;) {
+sh &apos;&apos;&apos;mkdir -p freebsd-ci
+mkdir -p src&apos;&apos;&apos;
+stage &apos;CHECKOUT&apos;
+git poll: false, url: &apos;https://github.com/freebsd/freebsd-ci&apos;
+svn &apos;svn://svn.freebsd.org/base/head&apos;
+shell &apos;ls -l&apos;
+}
+</script>
+    <sandbox>false</sandbox>
+  </definition>
   <triggers/>
 </flow-definition>
