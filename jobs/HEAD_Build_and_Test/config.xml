@@ -11,7 +11,7 @@ mkdir -p src&apos;&apos;&apos;
 stage &apos;CHECKOUT&apos;
 git poll: false, url: &apos;https://github.com/freebsd/freebsd-ci&apos;
 svn &apos;svn://svn.freebsd.org/base/head&apos;
-shell &apos;ls -l&apos;
+sh &apos;ls -l&apos;
 }
 </script>
     <sandbox>false</sandbox>
