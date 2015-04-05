@@ -21,5 +21,10 @@
 }</script>
     <sandbox>false</sandbox>
   </definition>
-  <triggers/>
+  <triggers>
+    <hudson.triggers.SCMTrigger>
+      <spec>H */3 * * *</spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
 </flow-definition>
