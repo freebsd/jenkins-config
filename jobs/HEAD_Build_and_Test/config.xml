@@ -9,10 +9,16 @@
 sh &apos;&apos;&apos;mkdir -p freebsd-ci
 mkdir -p src&apos;&apos;&apos;
 stage &apos;CHECKOUT&apos;
-git poll: false, url: &apos;https://github.com/freebsd/freebsd-ci&apos;
-svn &apos;svn://svn.freebsd.org/base/head&apos;
-sh &apos;ls -l&apos;
+
+dir(&apos;freebsd-ci&apos;) {
+    git poll: false, url: &apos;https://github.com/freebsd/freebsd-ci&apos;
 }
+
+dir(&apos;src&apos;) {
+    svn &apos;svn://svn.freebsd.org/base/head&apos;
+}
+
+sh &apos;ls -l -R&apos;
 </script>
     <sandbox>false</sandbox>
   </definition>
