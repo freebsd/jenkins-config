@@ -7,6 +7,7 @@
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@1.5">
     <script>node(&apos;jenkins-10.freebsd.org&apos;) {
     stage &apos;CHECKOUT&apos;
+    def TOP = pwd()
 
     dir(&apos;freebsd-ci&apos;) {
         git poll: false, url: &apos;https://github.com/freebsd/freebsd-ci&apos;
@@ -14,9 +15,9 @@
 
     dir(&apos;src&apos;) {
         svn &apos;svn://svn.freebsd.org/base/head&apos;
+        env.WORKSPACE=pwd()
+        sh &quot;${TOP}/freebsd-ci/scripts/build/build1.sh&quot;
     }
-
-    sh &apos;ls -l -R&apos;
 }</script>
     <sandbox>false</sandbox>
   </definition>
