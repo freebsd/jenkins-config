@@ -6,8 +6,6 @@
   <properties/>
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@1.5">
     <script>node(&apos;jenkins-10.freebsd.org&apos;) {
-    sh &apos;&apos;&apos;mkdir -p freebsd-ci
-    mkdir -p src&apos;&apos;&apos;
     stage &apos;CHECKOUT&apos;
 
     dir(&apos;freebsd-ci&apos;) {
