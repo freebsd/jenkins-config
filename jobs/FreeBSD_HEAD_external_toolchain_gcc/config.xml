@@ -64,14 +64,14 @@ WITHOUT_BOOT=yes
 cat &lt;&lt;EOF
 Index: sys/crypto/aesni/aesencdec.h
 ===================================================================
---- sys/crypto/aesni/aesencdec.h	(revision 280912)
+--- sys/crypto/aesni/aesencdec.h	(revision 280980)
 +++ sys/crypto/aesni/aesencdec.h	(working copy)
 @@ -27,6 +27,11 @@
   *
   */
  
-+#ifdef _KERNEL
-+/* Suppress inclusion of gcc\&apos;s mm_malloc.h header */
++#if defined(__GNUC__) &amp;&amp; defined(_KERNEL)
++/* Suppress inclusion of gcc&apos;s mm_malloc.h header */
 +#define _MM_MALLOC_H_INCLUDED 1
 +#endif
 +
@@ -80,14 +80,14 @@ Index: sys/crypto/aesni/aesencdec.h
  static inline void
 Index: sys/crypto/aesni/aesni_ghash.c
 ===================================================================
---- sys/crypto/aesni/aesni_ghash.c	(revision 280912)
+--- sys/crypto/aesni/aesni_ghash.c	(revision 280980)
 +++ sys/crypto/aesni/aesni_ghash.c	(working copy)
 @@ -71,6 +71,11 @@
  #include &lt;stdint.h&gt;
  #endif
  
-+#ifdef _KERNEL
-+/* Suppress inclusion of gcc\&apos;s mm_malloc.h header */
++#if defined(__GNUC__) &amp;&amp; defined(_KERNEL)
++/* Suppress inclusion of gcc&apos;s mm_malloc.h header */
 +#define _MM_MALLOC_H_INCLUDED 1
 +#endif
 +
@@ -96,21 +96,22 @@ Index: sys/crypto/aesni/aesni_ghash.c
  #include &lt;smmintrin.h&gt;
 Index: sys/crypto/aesni/aesni_wrap.c
 ===================================================================
---- sys/crypto/aesni/aesni_wrap.c	(revision 280912)
+--- sys/crypto/aesni/aesni_wrap.c	(revision 280980)
 +++ sys/crypto/aesni/aesni_wrap.c	(working copy)
-@@ -45,6 +45,11 @@
+@@ -45,6 +45,12 @@
  #include &lt;opencrypto/gmac.h&gt;
  
  #include &quot;aesencdec.h&quot;
-+#ifdef _KERNEL
-+/* Suppress inclusion of gcc\&apos;s mm_malloc.h header */
++
++#if defined(__GNUC__) &amp;&amp; defined(_KERNEL)
++/* Suppress inclusion of gcc&apos;s mm_malloc.h header */
 +#define _MM_MALLOC_H_INCLUDED 1
 +#endif
 +
  #include &lt;smmintrin.h&gt;
  
  MALLOC_DECLARE(M_AESNI);
- 
+
 EOF
 ) &gt; ${WORKSPACE}/patch1.txt
 
