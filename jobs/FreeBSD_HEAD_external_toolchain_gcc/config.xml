@@ -118,29 +118,24 @@ EOF
 cat &lt;&lt;EOF
 Index: Makefile.inc1
 ===================================================================
---- Makefile.inc1	(revision 280979)
-+++ Makefile.inc1	(working copy)
-@@ -1459,12 +1459,9 @@
- # we get done with the earlier stages. It is the last set of tools needed
- # to begin building the target binaries.
- #
--.if \${TARGET_ARCH} != \${MACHINE_ARCH}
- .if \${TARGET_ARCH} == &quot;amd64&quot; || \${TARGET_ARCH} == &quot;i386&quot;
- _btxld=		usr.sbin/btxld
+--- Makefile.inc1       (revision 280979)
++++ Makefile.inc1       (working copy)
+@@ -1462,10 +1462,14 @@
+ _btxld=                usr.sbin/btxld
  .endif
--.endif
--.if \${TARGET_ARCH} != \${MACHINE_ARCH}
- .if \${MK_RESCUE} != &quot;no&quot; || defined(RELEASEDIR)
- _crunchide=	usr.sbin/crunch/crunchide
  .endif
-@@ -1471,7 +1468,6 @@
- .if \${TARGET_ARCH} == &quot;i386&quot; &amp;&amp; defined(RELEASEDIR)
- _kgzip=		usr.sbin/kgzip
+-.if ${TARGET_ARCH} != ${MACHINE_ARCH}
++
++.if ${BOOTSTRAPPING} &lt; 1001507
+ .if ${MK_RESCUE} != &quot;no&quot; || defined(RELEASEDIR)
+ _crunchide=    usr.sbin/crunch/crunchide
  .endif
--.endif
- 
- # If we&apos;re given an XAS, don&apos;t build binutils.
- .if \${XAS:M/*} == &quot;&quot;
++.endif
++
++.if ${TARGET_ARCH} != ${MACHINE_ARCH}
+ .if ${TARGET_ARCH} == &quot;i386&quot; &amp;&amp; defined(RELEASEDIR)
+ _kgzip=                usr.sbin/kgzip
+ .endif
 EOF
 ) &gt; ${WORKSPACE}/patch2.txt
 
