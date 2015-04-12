@@ -8,7 +8,7 @@
     <jenkins.security.ApiTokenProperty>
       <apiToken>smdgEPsUNzICUguWzj+jfYm85cWzcuUtKor1Xtl97SCMT4TNXfzS427rbmWoMKMF</apiToken>
     </jenkins.security.ApiTokenProperty>
-    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.10">
+    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.22">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
     </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
     <hudson.model.MyViewsProperty>
@@ -27,16 +27,16 @@
     </hudson.search.UserSearchProperty>
     <jenkins.security.LastGrantedAuthoritiesProperty>
       <roles>
+        <string>authenticated</string>
+        <string>ROLE_RODRIGC</string>
         <string>rodrigc</string>
         <string>ROLE_RELENG</string>
-        <string>ROLE_RODRIGC</string>
-        <string>authenticated</string>
         <string>releng</string>
       </roles>
-      <timestamp>1397118522866</timestamp>
+      <timestamp>1428862862095</timestamp>
     </jenkins.security.LastGrantedAuthoritiesProperty>
-    <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.8">
+    <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.26"/>
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.15">
       <emailAddress>rodrigc@FreeBSD.org</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
   </properties>
