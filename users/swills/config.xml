@@ -8,7 +8,7 @@
     <jenkins.security.ApiTokenProperty>
       <apiToken>nfW40bdmrWq9ggQQWMRjdVCtNWdDeicIp2F9fElKB22MT4TNXfzS427rbmWoMKMF</apiToken>
     </jenkins.security.ApiTokenProperty>
-    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.10">
+    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1.22">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
     </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
     <hudson.model.MyViewsProperty>
@@ -25,19 +25,19 @@
     <hudson.search.UserSearchProperty>
       <insensitiveSearch>false</insensitiveSearch>
     </hudson.search.UserSearchProperty>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.6">
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.15">
       <emailAddress>swills@FreeBSD.org</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
     <jenkins.security.LastGrantedAuthoritiesProperty>
       <roles>
-        <string>portmgr</string>
-        <string>ROLE_PORTMGR</string>
         <string>authenticated</string>
+        <string>ROLE_PORTMGR</string>
         <string>ROLE_SWILLS</string>
         <string>swills</string>
+        <string>portmgr</string>
       </roles>
-      <timestamp>1402060889240</timestamp>
+      <timestamp>1428890878517</timestamp>
     </jenkins.security.LastGrantedAuthoritiesProperty>
-    <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.25"/>
+    <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.26"/>
   </properties>
 </user>
