@@ -118,9 +118,9 @@ EOF
 cat &lt;&lt;EOF
 Index: Makefile.inc1
 ===================================================================
---- Makefile.inc1       (revision 280979)
+--- Makefile.inc1       (revision 281485)
 +++ Makefile.inc1       (working copy)
-@@ -1462,10 +1462,14 @@
+@@ -1465,10 +1465,14 @@
  _btxld=                usr.sbin/btxld
  .endif
  .endif
@@ -128,7 +128,8 @@ Index: Makefile.inc1
 +
 +.if \${BOOTSTRAPPING} &lt; 1001507
  .if \${MK_RESCUE} != &quot;no&quot; || defined(RELEASEDIR)
- _crunchide=    usr.sbin/crunch/crunchide
+-_crunchide=    usr.sbin/crunch/crunchide
++_crunchide=    usr.sbin/crunch/crunchide
  .endif
 +.endif
 +
@@ -136,6 +137,7 @@ Index: Makefile.inc1
  .if \${TARGET_ARCH} == &quot;i386&quot; &amp;&amp; defined(RELEASEDIR)
  _kgzip=                usr.sbin/kgzip
  .endif
+
 EOF
 ) &gt; ${WORKSPACE}/patch2.txt
 
