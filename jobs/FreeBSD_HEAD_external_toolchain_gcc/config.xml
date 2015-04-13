@@ -124,16 +124,16 @@ Index: Makefile.inc1
  _btxld=                usr.sbin/btxld
  .endif
  .endif
--.if ${TARGET_ARCH} != ${MACHINE_ARCH}
+-.if \${TARGET_ARCH} != \${MACHINE_ARCH}
 +
-+.if ${BOOTSTRAPPING} &lt; 1001507
- .if ${MK_RESCUE} != &quot;no&quot; || defined(RELEASEDIR)
++.if \${BOOTSTRAPPING} &lt; 1001507
+ .if \${MK_RESCUE} != &quot;no&quot; || defined(RELEASEDIR)
  _crunchide=    usr.sbin/crunch/crunchide
  .endif
 +.endif
 +
-+.if ${TARGET_ARCH} != ${MACHINE_ARCH}
- .if ${TARGET_ARCH} == &quot;i386&quot; &amp;&amp; defined(RELEASEDIR)
++.if \${TARGET_ARCH} != \${MACHINE_ARCH}
+ .if \${TARGET_ARCH} == &quot;i386&quot; &amp;&amp; defined(RELEASEDIR)
  _kgzip=                usr.sbin/kgzip
  .endif
 EOF
