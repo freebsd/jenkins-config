@@ -2,8 +2,8 @@
 <hudson>
   <disabledAdministrativeMonitors/>
   <version>1.606</version>
-  <numExecutors>4</numExecutors>
-  <mode>NORMAL</mode>
+  <numExecutors>0</numExecutors>
+  <mode>EXCLUSIVE</mode>
   <useSecurity>true</useSecurity>
   <authorizationStrategy class="hudson.security.GlobalMatrixAuthorizationStrategy">
     <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:delphij</permission>
