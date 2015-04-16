@@ -59,7 +59,7 @@ WERROR=
   <customWorkspace>/builds/$JOB_NAME</customWorkspace>
   <builders>
     <hudson.tasks.Shell>
-      <command>fetch http://people.freebsd.org/~rodrigc/aesni_patch.txt
+      <command>
 
 (
 cat &lt;&lt;EOF
@@ -110,10 +110,8 @@ Index: sys/boot/i386/Makefile
 EOF
 ) &gt; ${WORKSPACE}/patch3.txt
 
-svn revert -R sys/crypto/aesni
 svn revert Makefile.inc1
 svn revert sys/boot/i386/Makefile
-patch -f &lt; ${WORKSPACE}/aesni_patch.txt
 patch -f &lt; ${WORKSPACE}/patch2.txt
 patch -f &lt; ${WORKSPACE}/patch3.txt
 
