@@ -47,7 +47,11 @@ See results at: &lt;a href=&quot;http://scan.freebsd.org&quot;&gt;http://scan.fr
         </branches>
         <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
         <submoduleCfg class="list"/>
-        <extensions/>
+        <extensions>
+          <hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+            <relativeTargetDir>freebsd-ci</relativeTargetDir>
+          </hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+        </extensions>
       </hudson.plugins.git.GitSCM>
     </scms>
   </scm>
