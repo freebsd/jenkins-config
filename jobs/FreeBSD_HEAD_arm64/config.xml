@@ -9,17 +9,7 @@
     <artifactNumToKeep>-1</artifactNumToKeep>
   </logRotator>
   <keepDependencies>false</keepDependencies>
-  <properties>
-    <hudson.model.ParametersDefinitionProperty>
-      <parameterDefinitions>
-        <hudson.model.TextParameterDefinition>
-          <name>MAKE_CONF_FILE</name>
-          <description></description>
-          <defaultValue>TARGET=arm64</defaultValue>
-        </hudson.model.TextParameterDefinition>
-      </parameterDefinitions>
-    </hudson.model.ParametersDefinitionProperty>
-  </properties>
+  <properties/>
   <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.5">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
@@ -51,7 +41,11 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>/vm/freebsd-ci/scripts/build/build1.sh
+      <command>export MAKEOBJDIRPREFIX=${WORKSPACE}/obj
+mkdir -p ${MAKEOBJDIRPREFIX}
+
+make -j 8 buildworld TARGET=arm64
+make -j 8 buildkernel TARGET=arm64
 </command>
     </hudson.tasks.Shell>
   </builders>
