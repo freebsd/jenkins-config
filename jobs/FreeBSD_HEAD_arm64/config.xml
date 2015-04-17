@@ -56,7 +56,7 @@ make -j 8 buildkernel TARGET=arm64
   </builders>
   <publishers>
     <hudson.tasks.Mailer plugin="mailer@1.15">
-      <recipients>lwhsu@FreeBSD.org</recipients>
+      <recipients>jenkins-admin@FreeBSD.org</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>
     </hudson.tasks.Mailer>
