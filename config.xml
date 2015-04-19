@@ -401,7 +401,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <properties class="hudson.model.View$PropertyList"/>
       <gridBuilder class="au.com.centrumsystems.hudson.plugin.buildpipeline.DownstreamProjectGridBuilder">
         <firstJob>FreeBSD_ports_ci_head_master</firstJob>
-        <firstJobLink>job/FreeBSD_ports_ci_head_master/</firstJobLink>
+        <firstJobLink>view/FreeBSD_src_stable/job/FreeBSD_ports_ci_head_master/</firstJobLink>
       </gridBuilder>
       <noOfDisplayedBuilds>1</noOfDisplayedBuilds>
       <buildViewTitle></buildViewTitle>
@@ -451,7 +451,9 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
         <string>FreeBSD_stable_10</string>
         <string>FreeBSD_STABLE_10-i386</string>
         <string>FreeBSD_stable_8</string>
+        <string>FreeBSD_STABLE_8-i386</string>
         <string>FreeBSD_stable_9</string>
+        <string>FreeBSD_STABLE_9-i386</string>
       </jobNames>
       <jobFilters/>
       <columns>
