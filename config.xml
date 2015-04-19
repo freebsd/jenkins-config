@@ -449,6 +449,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
         <string>FreeBSD_stable_10</string>
+        <string>FreeBSD_STABLE_10-i386</string>
         <string>FreeBSD_stable_8</string>
         <string>FreeBSD_stable_9</string>
       </jobNames>
