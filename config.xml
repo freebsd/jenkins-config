@@ -459,7 +459,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
         <hudson.views.LastDurationColumn/>
         <hudson.views.BuildButtonColumn/>
       </columns>
-      <includeRegex>FreeBSD_stable_.*</includeRegex>
+      <includeRegex>FreeBSD_(stable|STABLE)_.*</includeRegex>
       <recurse>false</recurse>
     </listView>
     <listView>
