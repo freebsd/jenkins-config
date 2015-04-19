@@ -13,7 +13,7 @@
   <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.5">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>svn://svn.freebsd.org/base/head</remote>
+        <remote>svn://svn.freebsd.org/base/stable/10</remote>
         <credentialsId></credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
@@ -55,9 +55,9 @@ make -j 4 buildkernel</command>
   </builders>
   <publishers>
     <hudson.tasks.Mailer plugin="mailer@1.15">
-      <recipients>jenkins-admin@FreeBSD.org freebsd-current@FreeBSD.org freebsd-i386@FreeBSD.org</recipients>
+      <recipients>jenkins-admin@FreeBSD.org freebsd-stable@FreeBSD.org freebsd-i386@FreeBSD.org</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
-      <sendToIndividuals>false</sendToIndividuals>
+      <sendToIndividuals>true</sendToIndividuals>
     </hudson.tasks.Mailer>
   </publishers>
   <buildWrappers/>
