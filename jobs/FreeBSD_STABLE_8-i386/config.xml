@@ -55,7 +55,7 @@ make -j 4 buildkernel</command>
   </builders>
   <publishers>
     <hudson.tasks.Mailer plugin="mailer@1.15">
-      <recipients>lwhsu@FreeBSD.org</recipients>
+      <recipients>jenkins-admin@FreeBSD.org freebsd-stable@FreeBSD.org freebsd-i386@FreeBSD.org</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>
     </hudson.tasks.Mailer>
