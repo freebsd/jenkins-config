@@ -2,7 +2,6 @@
 <project>
   <actions/>
   <description>This build uses the &lt;a href=&quot;http://clang-analyzer.llvm.org/&quot;&gt;clang static analyzer&lt;/a&gt;.&lt;br&gt;&#xd;
-See results at: &lt;a href=&quot;http://scan.freebsd.org&quot;&gt;http://scan.freebsd.org&lt;/a&gt;&#xd;
 </description>
   <logRotator class="hudson.tasks.LogRotator">
     <daysToKeep>-1</daysToKeep>
@@ -14,25 +13,6 @@ See results at: &lt;a href=&quot;http://scan.freebsd.org&quot;&gt;http://scan.fr
   <properties/>
   <scm class="org.jenkinsci.plugins.multiplescms.MultiSCM" plugin="multiple-scms@0.4">
     <scms>
-      <hudson.scm.SubversionSCM plugin="subversion@2.5">
-        <locations>
-          <hudson.scm.SubversionSCM_-ModuleLocation>
-            <remote>svn://svn.freebsd.org/base/head</remote>
-            <credentialsId></credentialsId>
-            <local>src</local>
-            <depthOption>infinity</depthOption>
-            <ignoreExternalsOption>true</ignoreExternalsOption>
-          </hudson.scm.SubversionSCM_-ModuleLocation>
-        </locations>
-        <excludedRegions></excludedRegions>
-        <includedRegions></includedRegions>
-        <excludedUsers></excludedUsers>
-        <excludedRevprop></excludedRevprop>
-        <excludedCommitMessages></excludedCommitMessages>
-        <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
-        <ignoreDirPropChanges>false</ignoreDirPropChanges>
-        <filterChangelog>false</filterChangelog>
-      </hudson.scm.SubversionSCM>
       <hudson.plugins.git.GitSCM plugin="git@2.3.5">
         <configVersion>2</configVersion>
         <userRemoteConfigs>
@@ -68,8 +48,40 @@ See results at: &lt;a href=&quot;http://scan.freebsd.org&quot;&gt;http://scan.fr
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command># scan the world!
-sh freebsd-ci/scan-build/scan-world</command>
+      <command>export CCC_CC=clang-devel
+
+(
+cat &lt;&lt;EOF
+CC?=clang-devel
+all:
+	\${CC} -o a a.c
+EOF
+) &gt; Makefile
+
+(
+cat &lt;&lt;EOF
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int
+main(int argc, char *argv[])
+{
+   int a[5];
+   int *b = NULL;
+   a[6] = 5;
+   *b = 35;
+   b = malloc(sizeof(int));
+   *b = 36;
+   free(b);
+   *b = 37;
+}
+EOF
+) &gt; a.c
+
+
+rm -rf ${WORKSPACE}/clangScanBuildReports
+scan-build-devel -o ${WORKSPACE}/clangScanBuildReports -v -v --use-cc clang --use-analyzer=/usr/local/bin/clang-devel make
+</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
