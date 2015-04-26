@@ -28,7 +28,12 @@
       <insensitiveSearch>false</insensitiveSearch>
     </hudson.search.UserSearchProperty>
     <jenkins.security.LastGrantedAuthoritiesProperty>
-      <timestamp>0</timestamp>
+      <roles>
+        <string>mmoll</string>
+        <string>authenticated</string>
+        <string>ROLE_MMOLL</string>
+      </roles>
+      <timestamp>1430077211513</timestamp>
     </jenkins.security.LastGrantedAuthoritiesProperty>
   </properties>
 </user>
