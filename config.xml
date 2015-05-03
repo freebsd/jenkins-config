@@ -366,8 +366,15 @@
     <inhibitInferRootDN>false</inhibitInferRootDN>
     <userSearchBase>ou=users</userSearchBase>
     <userSearch>uid={0}</userSearch>
-    <groupMembershipStrategy class="jenkins.security.plugins.ldap.FromGroupSearchLDAPGroupMembershipStrategy"/>
+    <groupMembershipStrategy class="jenkins.security.plugins.ldap.FromGroupSearchLDAPGroupMembershipStrategy">
+      <filter></filter>
+    </groupMembershipStrategy>
+    <managerPasswordSecret>jE+EzV380uNu625lqDCjBQ==</managerPasswordSecret>
     <disableMailAddressResolver>false</disableMailAddressResolver>
+    <displayNameAttributeName>displayname</displayNameAttributeName>
+    <mailAddressAttributeName>mail</mailAddressAttributeName>
+    <userIdStrategy class="jenkins.model.IdStrategy$CaseInsensitive"/>
+    <groupIdStrategy class="jenkins.model.IdStrategy$CaseInsensitive"/>
   </securityRealm>
   <disableRememberMe>false</disableRememberMe>
   <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
@@ -401,7 +408,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
       <properties class="hudson.model.View$PropertyList"/>
       <gridBuilder class="au.com.centrumsystems.hudson.plugin.buildpipeline.DownstreamProjectGridBuilder">
         <firstJob>FreeBSD_ports_ci_head_master</firstJob>
-        <firstJobLink>view/FreeBSD_src_head/job/FreeBSD_ports_ci_head_master/</firstJobLink>
+        <firstJobLink>job/FreeBSD_ports_ci_head_master/</firstJobLink>
       </gridBuilder>
       <noOfDisplayedBuilds>1</noOfDisplayedBuilds>
       <buildViewTitle></buildViewTitle>
@@ -536,6 +543,9 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
   <primaryView>All</primaryView>
   <slaveAgentPort>0</slaveAgentPort>
   <label></label>
+  <crumbIssuer class="hudson.security.csrf.DefaultCrumbIssuer">
+    <excludeClientIPFromCrumb>true</excludeClientIPFromCrumb>
+  </crumbIssuer>
   <nodeProperties/>
   <globalNodeProperties/>
 </hudson>
