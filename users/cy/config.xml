@@ -31,11 +31,11 @@
     <hudson.plugins.ircbot.IrcUserProperty plugin="ircbot@2.26"/>
     <jenkins.security.LastGrantedAuthoritiesProperty>
       <roles>
-        <string>cy</string>
         <string>authenticated</string>
+        <string>cy</string>
         <string>ROLE_CY</string>
       </roles>
-      <timestamp>1406086662878</timestamp>
+      <timestamp>1430743791987</timestamp>
     </jenkins.security.LastGrantedAuthoritiesProperty>
   </properties>
 </user>
