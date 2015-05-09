@@ -73,6 +73,11 @@ sh freebsd-ci/scan-build/scan-world</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
+    <jenkins.plugins.clangscanbuild.publisher.ClangScanBuildPublisher plugin="clang-scanbuild-plugin@1.5">
+      <bugThreshold>5000</bugThreshold>
+      <clangexcludedpaths></clangexcludedpaths>
+      <markBuildUnstableWhenThresholdIsExceeded>true</markBuildUnstableWhenThresholdIsExceeded>
+    </jenkins.plugins.clangscanbuild.publisher.ClangScanBuildPublisher>
     <hudson.tasks.Mailer plugin="mailer@1.15">
       <recipients>jenkins-admin@FreeBSD.org</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
