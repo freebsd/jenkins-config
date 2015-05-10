@@ -13,7 +13,8 @@
   <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.5">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>svn://svn.freebsd.org/base/head</remote>
+        <remote>svn://svnmir.freebsd.org/base/head</remote>
+        <credentialsId></credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
         <ignoreExternalsOption>false</ignoreExternalsOption>
@@ -66,7 +67,7 @@
     </hudson.tasks.Mailer>
     <hudson.plugins.ircbot.IrcPublisher plugin="ircbot@2.26">
       <targets>
-        <hudson.plugins.im.GroupChatIMMessageTarget plugin="instant-messaging@1.34">
+        <hudson.plugins.im.GroupChatIMMessageTarget plugin="instant-messaging@1.35">
           <name>#freebsd-commits</name>
           <notificationOnly>true</notificationOnly>
         </hudson.plugins.im.GroupChatIMMessageTarget>
@@ -77,8 +78,9 @@
       <notifyCulprits>false</notifyCulprits>
       <notifyFixers>false</notifyFixers>
       <notifyUpstreamCommitters>false</notifyUpstreamCommitters>
-      <buildToChatNotifier class="hudson.plugins.im.build_notify.SummaryOnlyBuildToChatNotifier" plugin="instant-messaging@1.34"/>
+      <buildToChatNotifier class="hudson.plugins.im.build_notify.SummaryOnlyBuildToChatNotifier" plugin="instant-messaging@1.35"/>
       <matrixMultiplier>ONLY_CONFIGURATIONS</matrixMultiplier>
+      <channels/>
     </hudson.plugins.ircbot.IrcPublisher>
   </publishers>
   <buildWrappers/>
