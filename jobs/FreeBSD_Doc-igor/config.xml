@@ -4,10 +4,11 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <scm class="hudson.scm.SubversionSCM" plugin="subversion@1.54">
+  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.5">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>svn://svn.freebsd.org/doc/head</remote>
+        <remote>svn://svnmir.freebsd.org/doc/head</remote>
+        <credentialsId></credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
         <ignoreExternalsOption>true</ignoreExternalsOption>
@@ -54,16 +55,17 @@ FOOTER</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.plugins.checkstyle.CheckStylePublisher plugin="checkstyle@3.39">
+    <hudson.plugins.checkstyle.CheckStylePublisher plugin="checkstyle@3.42">
       <healthy></healthy>
       <unHealthy></unHealthy>
       <thresholdLimit>low</thresholdLimit>
       <pluginName>[CHECKSTYLE] </pluginName>
       <defaultEncoding></defaultEncoding>
       <canRunOnFailed>false</canRunOnFailed>
+      <usePreviousBuildAsReference>false</usePreviousBuildAsReference>
       <useStableBuildAsReference>false</useStableBuildAsReference>
       <useDeltaValues>false</useDeltaValues>
-      <thresholds plugin="analysis-core@1.65">
+      <thresholds plugin="analysis-core@1.71">
         <unstableTotalAll></unstableTotalAll>
         <unstableTotalHigh></unstableTotalHigh>
         <unstableTotalNormal></unstableTotalNormal>
@@ -75,7 +77,7 @@ FOOTER</command>
       </thresholds>
       <shouldDetectModules>false</shouldDetectModules>
       <dontComputeNew>true</dontComputeNew>
-      <doNotResolveRelativePaths>false</doNotResolveRelativePaths>
+      <doNotResolveRelativePaths>true</doNotResolveRelativePaths>
       <pattern>checkstyle-result.xml</pattern>
     </hudson.plugins.checkstyle.CheckStylePublisher>
   </publishers>
