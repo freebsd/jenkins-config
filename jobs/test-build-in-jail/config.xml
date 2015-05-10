@@ -26,13 +26,65 @@
     <ignoreDirPropChanges>false</ignoreDirPropChanges>
     <filterChangelog>false</filterChangelog>
   </scm>
-  <canRoam>true</canRoam>
+  <assignedNode>jailer</assignedNode>
+  <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
-  <builders/>
-  <publishers/>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>export jname=${JOB_NAME}
+
+echo &quot;setup jail ${jname}&quot;
+
+fetch ftp://ftp.freebsd.org:/pub/FreeBSD/releases/amd64/10.1-RELEASE/base.txz
+fetch ftp://ftp.freebsd.org:/pub/FreeBSD/releases/amd64/10.1-RELEASE/lib32.txz
+
+mkdir ${jname}
+
+cd ${jname}
+tar Jxf ../base.txz
+tar Jxf ../lib32.txz
+cd -
+
+sudo mount -t devfs devfs ${jname}/dev
+sudo devfs -m ${jname}/dev rule -s 4 applyset
+
+sudo mount -t nullfs src ${jname}/usr/src
+
+sudo jail -c persist name=&quot;${jname}&quot; path=&quot;${jname}&quot; host.hostname=&quot;${jname}.jail.ci.FreeBSD.org&quot; ip6=disable ip4=disable allow.chflags</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>export jname=${JOB_NAME}
+
+echo &quot;start build i ${jname}&quot;
+
+sudo jexec ${jname} sh -c &quot;cd /usr/src &amp;&amp; make -j 4 buildworld&quot;
+sudo jexec ${jname} sh -c &quot;cd /usr/src &amp;&amp; make -j 4 buildkernel&quot;</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <org.jenkinsci.plugins.postbuildscript.PostBuildScript plugin="postbuildscript@0.17">
+      <buildSteps>
+        <hudson.tasks.Shell>
+          <command>export jname=${JOB_NAME}
+
+echo &quot;clean up jail ${jname}&quot;
+
+sudo jail -r ${jname}
+sudo umount ${jname}/usr/src
+sudo umount ${jname}/dev
+sudo rm -fr ${jname}
+#sudo chflags -R noschg ${jname}
+#sudo rm -fr ${jname}</command>
+        </hudson.tasks.Shell>
+      </buildSteps>
+      <scriptOnlyIfSuccess>false</scriptOnlyIfSuccess>
+      <scriptOnlyIfFailure>false</scriptOnlyIfFailure>
+      <markBuildUnstable>false</markBuildUnstable>
+    </org.jenkinsci.plugins.postbuildscript.PostBuildScript>
+  </publishers>
   <buildWrappers/>
 </project>
