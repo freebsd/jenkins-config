@@ -7,7 +7,7 @@
   <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.5">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>svn://svn.freebsd.org/doc/head</remote>
+        <remote>svn://svnmir.freebsd.org/doc/head</remote>
         <credentialsId></credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
