@@ -49,8 +49,8 @@
       <command>export MAKEOBJDIRPREFIX=${WORKSPACE}/obj
 mkdir -p ${MAKEOBJDIRPREFIX}
 
-make -j 8 buildworld TARGET=arm64
-make -j 8 buildkernel TARGET=arm64
+make -j 4 buildworld TARGET=arm64
+make -j 4 buildkernel TARGET=arm64
 </command>
     </hudson.tasks.Shell>
   </builders>
