@@ -541,7 +541,7 @@ See the &lt;a href=&quot;https://wiki.freebsd.org/Jenkins&quot;&gt;Jenkins wiki 
     </listView>
   </views>
   <primaryView>All</primaryView>
-  <slaveAgentPort>0</slaveAgentPort>
+  <slaveAgentPort>8181</slaveAgentPort>
   <label></label>
   <nodeProperties/>
   <globalNodeProperties/>
