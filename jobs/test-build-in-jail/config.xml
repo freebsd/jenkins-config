@@ -39,8 +39,8 @@
 
 echo &quot;setup jail ${jname}&quot;
 
-fetch ftp://ftp.freebsd.org:/pub/FreeBSD/releases/amd64/10.1-RELEASE/base.txz
-fetch ftp://ftp.freebsd.org:/pub/FreeBSD/releases/amd64/10.1-RELEASE/lib32.txz
+fetch ftp://ftp.freebsd.org:/pub/FreeBSD/snapshots/amd64/amd64/11.0-CURRENT/base.txz
+fetch ftp://ftp.freebsd.org:/pub/FreeBSD/snapshots/amd64/amd64/11.0-CURRENT/lib32.txz
 
 mkdir ${jname}
 
